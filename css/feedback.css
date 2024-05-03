@@ -6,15 +6,15 @@
 
 body{
     background: #ffffff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height:100vh;
+    font-family: 'Inter', sans-serif;
 }
 
 .feedback-form .logo{
     width: 50%;
     display: block;
     margin: 0 auto;
-    padding: 20px 30px;
+    padding: 0px 40px;
 }
 
 .center{
@@ -38,7 +38,7 @@ body{
 
 .feedback-form{
     position:absolute;
-    top: 50%;
+    top: 62%;
     left:50%;
     transform: translate(-50%, -50%) scale(1.25);
     width: 380px;
@@ -93,14 +93,38 @@ font-size: 25px;
 .feedback-form .form .form-element input[type="text"],
 .feedback-form .form .form-element input[type="subject"]
 .feedback-form .form .form-element input[type="konten"]{
+    box-shadow: 2px 2px 2px  rgba(199, 199, 199, 0.8);
     margin-top: 5px;
     display:block;
     width:100%;
     padding: 10px;
     outline: none;
-    border:1px solid #aaa;
+    border:1px solid #ffffff;
     border-radius: 10px;
 }
+
+.feedback-form textarea{
+    box-shadow: 2px 2px 2px  rgba(199, 199, 199, 0.8);
+    font-family:'inter';
+    margin-top: 5px;
+    display:block;
+    width:100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    resize: none;
+}
+
+textarea:is(:focus, :valid){
+    border-width: 2px;
+    padding: 14px;
+    border-color: #ffffff;
+}
+
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
+
 
 .feedback-form .form .form-element button{
     width: 100%;
