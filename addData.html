@@ -15,75 +15,79 @@
         <li><a href="Feedback.html">feedback</a></li>
         </ul>
     </nav>
+    <main>
+    <div class="card">
+        <img src="C:\Users\user\Downloads\AddDataVector.png" alt="">
+        <div class="card-desc">
+            <div class="title">Add New Data</div>
+            <div class="title-desc">Input Your Data Below</div>
+        </div>
+    </div>
+    <div class="form">
     <form action="" method="POST">
-        <div>
-            <label for="Borough">Borough</label><br>
-            <input type="text" id="Borough" name="Borough" required><br>
+        <div class="form-detail">
+            <div>
+                <label for="nama">Borough</label><br>
+                <input type="text" id="nama" name="nama" required><br>
+            </div>
+            <div>
+                <label for="email">Neighborhood</label><br>
+                <input type="email" id="email" name="email" required><br>
+            </div>
+            <div>
+                <label for="pesan">Buliding Class Category </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Block </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Lot </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Addres </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Zip Code </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan"> Total Units </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Land Square </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Yer Build </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Tex Class </label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Sale Price</label><br>
+                <textarea id="pesan" name="pesan"  required></textarea><br>
+            </div>
+            <div>
+                <label for="pesan">Sale Data </label><br>
+                <textarea id="text" name="pesan"  required></textarea><br>
+            </div>
         </div>
-        <div>
-            <label for="Neighborhood">Neighborhood</label><br>
-            <input type="text" id="Neighborhood" name="Neighborhood" required><br>
+        <div class="form-button">
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+            <div>
+                <input type="reset" value="Censel" onclick="window.location.href='Dashboard.html';" >
+            </div>
         </div>
-        <div>
-            <label for="building_class_category">Buliding class category</label><br>
-            <input type="text" id="Neighborhood" name="Neighborhood" required><br>
-        </div>
-        <div>
-            <label for="Block">Block </label><br>
-            <input type="number" id="Block" name="Block" required><br>
-        </div>
-        <div>
-            <label for="Lot">Lot </label><br>
-            <input type="number" id="Lot" name="Lot" required><br>
-        </div>
-        <div>
-            <label for="address">Address</label><br>
-            <textarea id="address" name="address"  required></textarea><br>
-        </div>
-        <div>
-            <label for="zip_code">Zip Code</label><br>
-            <input type="number" id="zip_code" name="zip_code" required><br>
-        </div>
-        <div>
-            <label for="total_units"> Total Units </label><br>
-            <input type="number" id="total_units" name="total_units" required><br>
-        </div>
-        <div>
-            <label for="land_square">Land Square</label><br>
-            <input type="number" id="land_square" name="land_square" required><br>
-        </div>
-        <div>
-            <label for="year_built">Year Built</label><br>
-            <input type="number" id="year_built" name="year_built" required><br>
-        </div>
-        <div>
-            <label for="tax_class">Tax Class</label><br>
-            <input type="number" id="tax_class" name="tax_class" required><br>
-        </div>
-        <div>
-            <label for="sale_price">Sale Price</label><br>
-            <input type="number" id="sale_price" name="sale_price" required><br>
-        </div>
-        <div>
-            <label for="sale_date">Sale Date</label><br>
-            <input type="date" id="sale_date" name="sale_date" required><br>
-        </div>
-        <div>
-            <input type="submit" value="Submit">
-        </div>
-       
-        <div>
-            <input type="reset" value="Cancel" onclick="window.location.href='Dashboard.html';" >
-        
-        </div>
-        
     </form>
-    <script>
-        function logout() {
-            // Mengarahkan kembali ke halaman login saat logout
-            window.location.href = "login.html";
-        }
-    </script>
-</body>
+    </div>
+    </main>
 </html>
-
