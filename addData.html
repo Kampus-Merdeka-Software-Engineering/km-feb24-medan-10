@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Formulir HTML</title>
+    <link rel="stylesheet" href="style2.css"> 
+</head>
+<body>
+    <nav>
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Dashboard.html">Dashboard</a></li>
+        <li><a href="add-data.html">Add-Data</a></li>
+        <li><a href="ebout.html">feedback</a></li>
+        <li><button onclick="logout()">Logout</button></li>
+        </ul>
+
+        </ul>
+    </nav>
+    <h2>ADD-DATA</h2>
+    <form action="" method="POST">
+        <div>
+            <label for="Borough">Borough</label><br>
+            <input type="text" id="Borough" name="Borough" required><br>
+        </div>
+        <div>
+            <label for="Neighborhood">Neighborhood</label><br>
+            <input type="text" id="Neighborhood" name="Neighborhood" required><br>
+        </div>
+        <div>
+            <label for="building_class_category">Buliding class category</label><br>
+            <input type="text" id="Neighborhood" name="Neighborhood" required><br>
+        </div>
+        <div>
+            <label for="Block">Block </label><br>
+            <input type="number" id="Block" name="Block" required><br>
+        </div>
+        <div>
+            <label for="Lot">Lot </label><br>
+            <input type="number" id="Lot" name="Lot" required><br>
+        </div>
+        <div>
+            <label for="address">Address</label><br>
+            <textarea id="address" name="address"  required></textarea><br>
+        </div>
+        <div>
+            <label for="zip_code">Zip Code</label><br>
+            <input type="number" id="zip_code" name="zip_code" required><br>
+        </div>
+        <div>
+            <label for="total_units"> Total Units </label><br>
+            <input type="number" id="total_units" name="total_units" required><br>
+        </div>
+        <div>
+            <label for="land_square">Land Square</label><br>
+            <input type="number" id="land_square" name="land_square" required><br>
+        </div>
+        <div>
+            <label for="year_built">Year Built</label><br>
+            <input type="number" id="year_built" name="year_built" required><br>
+        </div>
+        <div>
+            <label for="tax_class">Tax Class</label><br>
+            <input type="number" id="tax_class" name="tax_class" required><br>
+        </div>
+        <div>
+            <label for="sale_price">Sale Price</label><br>
+            <input type="number" id="sale_price" name="sale_price" required><br>
+        </div>
+        <div>
+            <label for="sale_date">Sale Date</label><br>
+            <input type="date" id="sale_date" name="sale_date" required><br>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+       
+        <div>
+            <input type="reset" value="Cancel" onclick="window.location.href='Dashboard.html';" >
+        
+        </div>
+        
+    </form>
+    <script>
+        function logout() {
+            // Mengarahkan kembali ke halaman login saat logout
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
 
