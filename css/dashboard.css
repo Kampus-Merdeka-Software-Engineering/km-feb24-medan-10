@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 36px; 
+    font-weight: 700;
+    font-style: normal; 
+    background-color: #ffffff;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color: #008ddc;
+    height: 80px;
+}
+
+.title {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff; 
+    font-size: 36px; 
+    font-weight: 700;
+    font-style: normal;
+    margin: 50px 
+}
+
+.highlight {
+    font-family: "Poppins", sans-serif;
+    color: #ffed4f; 
+    font-size: 36px; 
+    font-weight: 700;
+    font-style: normal;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; 
+    font-size: 25px; 
+    text-align: center;
+    font-weight: 600;
+    font-style: normal;
+}
+    
+.scorecard1 {
+    position: absolute; 
+    top: 125px; 
+    left: 50px; 
+
+}
+
+.scorecard2 {
+    position: absolute; 
+    top: 195px; 
+    left: 50px; 
+}
+
+.grafik {
+    position: absolute; 
+    top: 125px; 
+    left: 385px;
+}
+
+.grafiktotal1 {
+    position: absolute; 
+    top: 275px; 
+    left: 50px;  
+}
+
+.piechart1 {
+    position: absolute;
+    border-radius: 100%; 
+    left: 950px;
+    top: 275px;
+}
+
+.piechart2 {
+    position: absolute;
+    border-radius: 100%; 
+    left: 1150px;
+    top: 275px;
+}
+
+.grafiktotal2 {
+    position: absolute; 
+    top: 440px; 
+    left: 50px;  
+}
+
+.search {
+    position: absolute; 
+    top: 440px; 
+    left: 740px; 
+}
+
+.tabeltotal {
+    position: absolute; 
+    top: 435px; 
+    left: 1025px; 
+}
