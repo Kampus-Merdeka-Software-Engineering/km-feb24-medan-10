@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+nav ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+main{
+    display: block;
+    margin: 55px 80px;
+    padding-bottom: 35px;
+    background-color: #E3E2F0;
+    border-radius: 50px;
+}
+.card{
+    padding: 35px 35px 10px;
+    display: flex;
+}
+.card-desc{
+    padding: 10px;
+}
+.title{
+    font-weight: Bold;
+}
+img{
+    width: 50px;
+}
+.form{
+    padding: 10px;
+}
+form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+form div {
+    margin-bottom: 10px;
+}
+form label {
+    font-weight: bold;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    margin-top: 10px;
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+form input[type="submit"],
+form input[type="button"] {
+    background-color: #008DDC;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right; /* Tombol submit berada di sebelah kanan */
+}
+form input[type="submit"]:hover,
+form input[type="button"]:hover {
+    background-color: #008DDC;
+}
+form input[type="reset"],
+form input[type="button"] {
+    text-align: center;
+    background-color: #008DDC;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    float: left; /* Tombol reset berada di sebelah kiri*/
+}
+.form-detail{
+    margin-bottom: 10px;
+}
+form input[type="reset"]:hover,
+form input[type="button"]:hover {
+    background-color: #008DDC;
+}
