@@ -1,7 +1,6 @@
-body {
-    font-family: Arial, sans-serif;
+/* body {
     padding: 20px;
-}
+} */
 nav ul {
     list-style-type: none;
     margin-bottom: 20px;
@@ -10,83 +9,109 @@ nav ul li {
     display: inline;
     margin-right: 10px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
 }
+
 main{
     display: block;
-    margin: 55px 80px;
-    padding-bottom: 35px;
+    margin: 90px 160px;
+    padding-bottom: 25px;
     background-color: #E3E2F0;
     border-radius: 50px;
 }
+
 .card{
-    padding: 35px 35px 10px;
+    padding: 55px 103px 55px 83px;
+}
+
+.header{
+    padding: 0px 35px 35px 0px;
     display: flex;
+    font-family: "Poppins", sans-serif;
 }
-.card-desc{
+/* .header-desc{
     padding: 10px;
-}
+} */
 .title{
-    font-weight: Bold;
+    font-weight: 700;
+    font-size: 36px;
 }
+
+.title-desc{
+    font-size: 26px;
+}
+
 img{
-    width: 50px;
+    width: 85px;
+    padding: 12px 27px 10px 0px;
 }
-.form{
-    padding: 10px;
-}
-form {
-    padding: 20px;
+
+.form {
+    font-family: "Inter", sans-serif;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-form div {
-    margin-bottom: 10px;
+
+.form-input{
+    padding-bottom: 28px;
 }
+
 form label {
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 20px;
 }
+
 form input[type="text"],
-form input[type="email"],
-form textarea {
+form input[type="date"] {
     margin-top: 10px;
     width: 100%;
-    padding: 7px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 20px;
+    font-size: 15px;
 }
+
+.button{
+    padding-top: 70px;
+    display: flex;
+    gap: 210px;
+    justify-content: center;
+}
+
 form input[type="submit"],
 form input[type="button"] {
     background-color: #008DDC;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
+    padding: 12px 56px;
+    font-size: 20px;
+    font-weight: 200;
+    border : 2px solid #496ADE;
+    border-radius: 20px;
     cursor: pointer;
-    float: right; /* Tombol submit berada di sebelah kanan */
 }
+
 form input[type="submit"]:hover,
 form input[type="button"]:hover {
-    background-color: #008DDC;
+    background-color: #026097;
 }
+
 form input[type="reset"],
 form input[type="button"] {
     text-align: center;
     background-color: #008DDC;
     color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
+    padding: 12px 56px;
+    font-size: 18px;
+    font-weight: 200;
+    border : 2px solid #496ADE;
+    border-radius: 20px;
     cursor: pointer;
-    float: left; /* Tombol reset berada di sebelah kiri*/
 }
-.form-detail{
-    margin-bottom: 10px;
-}
+
 form input[type="reset"]:hover,
 form input[type="button"]:hover {
-    background-color: #008DDC;
+    background-color: #026097;
 }
