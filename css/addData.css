@@ -1,24 +1,67 @@
-/* body {
-    padding: 20px;
-} */
-nav ul {
-    list-style-type: none;
-    margin-bottom: 20px;
-}
-nav ul li {
-    display: inline;
-    margin-right: 10px;
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+/* ----- Navigation Bar ----- */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    padding: 10px 2% 10px;
+    position: fixed;
+    background-color: #008bdc8c;
+    backdrop-filter: blur(70px);
+    font-family: "Poppins", sans-serif;
 }
+
+.logo{
+    color: #fff;
+}
+
+.logo span{
+    color: #FFED4F;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-button{
+    display: flex;
+    gap: 30px;
+}
+
+.nav-button a{
+    color: #ebebeb;
+    font-weight: 400;
+    transition: 0.3 ease;
+}
+
+.nav-button a:hover,
+.nav-button a:active{
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.account-icon{
+    width: 50px;
+}
+
+/* ----- Main Content ----- */
+/* ----- Add Data Form Box----- */
 
 main{
     display: block;
-    margin: 90px 160px;
+    margin: 140px 160px;
     padding-bottom: 25px;
     background-color: #E3E2F0;
     border-radius: 50px;
@@ -28,27 +71,35 @@ main{
     padding: 55px 103px 55px 83px;
 }
 
-.header{
-    padding: 0px 35px 35px 0px;
+/* ----- Add Data Form Header----- */
+
+.card-header{
     display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 60px;
     font-family: "Poppins", sans-serif;
 }
-/* .header-desc{
-    padding: 10px;
-} */
+
+.add-dataIcon{
+    width: 75px;
+    height: 75px;
+}
+
 .title{
     font-weight: 700;
-    font-size: 36px;
+    font-size: 30px;
+    color: #282828;
 }
 
 .title-desc{
-    font-size: 26px;
+    font-weight: 400;
+    font-size: 21px;
+    color: #282828;
 }
 
-img{
-    width: 85px;
-    padding: 12px 27px 10px 0px;
-}
+/* ----- Add Data Form ----- */
 
 .form {
     font-family: "Inter", sans-serif;
@@ -74,6 +125,8 @@ form input[type="date"] {
     font-size: 15px;
 }
 
+/* ----- Add Data Form Button ----- */
+
 .button{
     padding-top: 70px;
     display: flex;
@@ -82,7 +135,7 @@ form input[type="date"] {
 }
 
 form input[type="submit"],
-form input[type="button"] {
+form input[type="reset"]{
     background-color: #008DDC;
     color: white;
     padding: 12px 56px;
@@ -93,25 +146,7 @@ form input[type="button"] {
     cursor: pointer;
 }
 
-form input[type="submit"]:hover,
-form input[type="button"]:hover {
-    background-color: #026097;
-}
-
-form input[type="reset"],
-form input[type="button"] {
-    text-align: center;
-    background-color: #008DDC;
-    color: white;
-    padding: 12px 56px;
-    font-size: 18px;
-    font-weight: 200;
-    border : 2px solid #496ADE;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
 form input[type="reset"]:hover,
-form input[type="button"]:hover {
+form input[type="submit"]:hover{
     background-color: #026097;
 }
