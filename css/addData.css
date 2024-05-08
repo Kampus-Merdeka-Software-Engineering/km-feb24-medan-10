@@ -13,7 +13,7 @@ header{
     align-items: center;
     top: 0px;
     width: 100%;
-    padding: 10px 2% 10px;
+    padding: 14px 3% 14px;
     position: fixed;
     background-color: #008bdc8c;
     backdrop-filter: blur(70px);
@@ -22,6 +22,8 @@ header{
 
 .logo{
     color: #fff;
+    font-weight: 700;
+    font-size: 28px;
 }
 
 .logo span{
@@ -32,7 +34,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    gap: 45px;
 }
 
 .nav-button{
@@ -49,11 +51,12 @@ nav{
 .nav-button a:hover,
 .nav-button a:active{
     color: #fff;
-    transform: scale(1.2);
+    font-weight:600;
+    transform: scale(1.1);
 }
 
 .account-icon{
-    width: 50px;
+    width: 45px;
 }
 
 /* ----- Main Content ----- */
@@ -89,7 +92,7 @@ main{
 
 .title{
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     color: #282828;
 }
 
