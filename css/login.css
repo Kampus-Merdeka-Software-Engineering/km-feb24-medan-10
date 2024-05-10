@@ -5,6 +5,31 @@ body {
     background-image: url(assets/NYC_3.jpg);
     background-size: cover;
 }
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .loginbox {
+        max-width: 70%;
+    }
+}
+/* Mobile */
+@media (max-width: 767px) {
+    .loginbox {
+        width : 90%;
+        height : auto;
+        padding: 40px 20px;
+    }
+    .avatar {
+        width : 80px;
+        height : 80px;
+        top : -10%
+        left : calc(50% - 40px);
+    }
+    h1 {
+        font-size : 20px;
+        padding-bottom : 20px;
+        margin-top: 10px;
+    }
+}
 .loginbox {
     width: 450px;
     height: 370px;
