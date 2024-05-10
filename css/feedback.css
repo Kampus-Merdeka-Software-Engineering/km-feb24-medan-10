@@ -1,54 +1,108 @@
 *{
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* ----- Navigation Bar ----- */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    padding: 14px 3% 14px;
+    position: fixed;
+    background-color: #008bdc8c;
+    backdrop-filter: blur(70px);
+    font-family: "Poppins", sans-serif;
+}
+
+.logo1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.logo1 span{
+    color: #FFED4F;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-button{
+    display: flex;
+    gap: 30px;
+}
+
+.nav-button a{
+    color: #ebebeb;
+    font-weight: 400;
+    transition: 0.3 ease;
+}
+
+.nav-button a:hover,
+.nav-button a:active{
+    color: #fff;
+    font-weight:600;
+    transform: scale(1.1);
+}
+
+.account-icon{
+    width: 45px;
+}
+
+
+/* ----- Main Content ----- */
+
+main{
+    display: block;
+    padding: 130px 265px;
 }
 
 body{
-    background: #ffffff;
-    height:100vh;
-    font-family: 'Inter', sans-serif;
-}
-
-.feedback-form .logo{
-    width: 50%;
-    display: block;
-    margin: 0 auto;
-    padding: 0px 40px;
-}
-
-.center{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
-
-.center button{
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #222;
-    background: #f5f5f5;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
+    font-family: 'poppins', sans-serif;
 }
 
 .feedback-form{
-    position:absolute;
-    top: 62%;
-    left:50%;
-    transform: translate(-50%, -50%) scale(1.25);
-    width: 380px;
-    padding: 20px 30px;
-    background: #e3e2f0;
-    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0,15);
-    border-radius: 15px;
-    transition:top 0ms ease-in-out 200ms,
-            opacity 200ms ease-in-out 0ms,
-            transform 20ms ease-in-out 0ms;
+    padding: 53px 80px 53px 80px;
+    background-color: #E3E2F0;
+    border-radius: 45px;
+}
+
+.feedback-form-header{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 50px;
+    font-family: "Poppins", sans-serif;
+}
+
+.add-dataIcon{
+    width: 9%;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 23px;
+    color: #282828;
+}
+
+.feedback-form .logo{
+    padding: 53px 80px 2px 80px;
+    background-color: #E3E2F0;
+    border-radius: 45px;
+    width: 21%;
+    height: 21%;
+    margin: auto;
 }
 
 .feedback-form.active{
@@ -60,19 +114,6 @@ body{
             transform 20ms ease-in-out 0ms;
 }
 
-.feedback-form .close-button{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 15px;
-    height: 15px;
-    background: #888;
-    color: #eee;
-    text-align: center;
-    line-height: 15px;
-    border-radius: 15px;
-    cursor:pointer;
-}
 
 .feedback-form .form h2{
 text-align: center;
