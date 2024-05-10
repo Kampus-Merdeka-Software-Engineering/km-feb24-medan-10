@@ -137,3 +137,24 @@ section {
 .tabeltotal {
     padding-top: 30px;
 }
+
+/* Mobile Media Query*/
+@media screen and (max-width: 767px) {
+    header{
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav{
+        margin-top: 10px;
+    }
+    
+    div.nav-button{
+        flex-direction: column;
+    }
+}
+
+/* Tablet Media Query*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    /* Isi CSS untuk tablet disini */
+}
