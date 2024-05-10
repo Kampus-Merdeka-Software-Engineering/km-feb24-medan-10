@@ -12,14 +12,16 @@
 </head>
 <body>
     <header>
-        <h1 class="title">NYC <span class="highlight">PROPERTY</span> SALES</h1>
+        <div class="logo">
+            <div>NYC <span>POPERTY</span> SALES</div>
+        </div>
         <nav>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="addData.html">Add Data</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-                <li><a href="login.html"><img src="assets/account icon.png" style="margin-right: 30px;"></a></li>
-            </ul>
+            <div class="nav-button">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="addData.html">Add Data</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <a href="login.html"><img src="assets/account icon.png" alt="Account Icon" class="account-icon"></a>
         </nav>
     </header>
     <section>
@@ -36,7 +38,7 @@
             </div>
             <div class="totalperborough">
                 <p class="titlegrafik">Total Property Sales in Each Borough</p>
-                <svg class="grafik" width="936" height="136">
+                <svg class="grafik" width="850" height="136">
                     <!-- Placeholder for chart content -->
                     <rect width="100%" height="100%" fill="#d9d9d9" stroke="#000"/>
                 </svg>
