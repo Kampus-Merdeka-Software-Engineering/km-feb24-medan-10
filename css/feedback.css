@@ -97,7 +97,7 @@ body{
 }
 
 .feedback-form .logo{
-    padding: 53px 80px 2px 80px;
+    padding: 53px 80px 1px 80px;
     background-color: #E3E2F0;
     border-radius: 45px;
     width: 21%;
@@ -123,11 +123,11 @@ font-size: 25px;
 }
 
 .feedback-form .form .form-element{
-    margin:15px 0px;
+    margin:25px 10%;
 }
 
 .feedback-form .form .form-element label{
-    font-size: 14px;
+    font-size: 16px;
     color: #222;
 }
 
@@ -135,13 +135,13 @@ font-size: 25px;
 .feedback-form .form .form-element input[type="subject"]
 .feedback-form .form .form-element input[type="konten"]{
     box-shadow: 2px 2px 2px  rgba(199, 199, 199, 0.8);
-    margin-top: 5px;
+    margin-top: 10px;
     display:block;
     width:100%;
-    padding: 10px;
+    padding: 15px;
     outline: none;
     border:1px solid #ffffff;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .feedback-form textarea{
