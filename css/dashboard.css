@@ -273,3 +273,28 @@ main {
     height: 40px;
     background-color: #cdcdcd;
 }
+.tabelrec {
+    padding: 10px;
+    height: 200px;
+    background-color: #cdcdcd;
+}
+
+.piechart1, .piechart2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pieavg, .pietotal {
+    padding: 10px;
+    width: 110px;
+    height: 110px;
+    background-color: #cdcdcd;
+    border-radius: 50%;
+}
+
+.linechartotal {
+    padding: 10px;
+    height: 100px;
+    background-color: #cdcdcd;
+}
