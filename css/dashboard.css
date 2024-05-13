@@ -413,3 +413,61 @@ form input[type="text"] {
     .scoreprop {
         margin-left: 5px;
     }
+.tabelrec,
+    .piechart1,
+    .piechart2,
+    .linechartotal,
+    .totalavgchart,
+    .linechartprop {
+        width: 95%; 
+        margin: 10px 5px; 
+    }
+
+    form {
+        padding: 0; 
+    }
+
+    .form-input {
+        width: 100%;
+    }
+
+    form input[type="text"] {
+        font-size: 12px; 
+        padding: 10px; 
+        border-radius: 20px; 
+    }
+}
+
+/-------- mobile tablet ------/
+@media (min-width: 768px) and (max-width: 1199px) {
+    /* --------- Navbar --------- */
+    nav {
+        width: 80px; 
+        padding: 70px 10px; 
+
+    }
+
+    .account-icon{
+        width: 45px;
+    }
+
+    .dashboard-icon, .addData-icon, .feedback-icon{
+    width: 40px;  
+    }
+
+    .logOut-icon{
+        width: 20px;
+    }
+
+    /* --------- Header and Filter button --------- */
+    header {
+        padding: 10px 15px; 
+        gap: 30px; 
+        margin-left: 100px;
+        margin-top: 20px;
+    }
+
+    .logo {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
