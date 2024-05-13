@@ -470,5 +470,69 @@ form input[type="text"] {
     .logo {
         font-size: 25px;
         margin-bottom: 10px;
-    }
+    }
+
+    .filter-button {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .dropbtn-borough{
+        padding: 5px 15px;
+    }
+
+    .dropbtn-month{
+        padding: 5px 15px;
+    }
+
+    .borough-filter, .month-filter {
+        margin-bottom: 5px;
+        
+    }
+
+    /* --------------------- Main Content ------------------------ */
+    .titles {
+        font-size: 15px;
+    }
+
+    main {
+        margin-left: 70px;
+        padding: 0 15px; 
+    }
+
+    .grid-container {
+        grid-template-columns: auto; 
+    }
+
+    .tabel, .linetotal, .totalavg, .totalprop {
+        grid-column: auto; 
+    }
+
+    /* ----------  Chart Detail ---------- */
+    .scorecode1, .scorecode2 {
+        margin-top: 20px;
+        padding: 10px 20px;
+    }
+
+    .scoreprop {
+        margin-left: 5px;
+    }
+    
+    .tabelrec, .piechart1, .piechart2, .linechartotal, .totalavgchart, .linechartprop {
+        margin: 10px 5px; 
+    }
+
+    form {
+        padding: 0; 
+    }
+
+    .form-input {
+        width: 100%;
+    }
+
+    form input[type="text"] {
+        font-size: 12px; 
+        padding: 10px; 
+        border-radius: 20px; 
+    }
 }
