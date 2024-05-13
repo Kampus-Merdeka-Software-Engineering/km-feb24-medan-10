@@ -65,3 +65,33 @@ ul {
 .feedback-icon:hover{
     transform: scale(1.3);
 }
+
+header{
+    padding: 32px 0px 32px 170px;
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 678px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #4B93FF;
+}
+
+.logo span{
+    color: #FFE713;
+}
+
+.filter-button{
+    display: flex;
+    align-items: center;
+}
+
+.borough-filter,
+.month-filter{
+    position: relative;
+    display: inline-block;
+}
