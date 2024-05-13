@@ -163,3 +163,18 @@ header{
 .month-filter:hover .dropbtn-month {
     background-color: #9cc3ff;
 }
+
+.borough-dropdwn-content a:hover,
+.month-dropdwn-content a:hover {
+    background-color: #ddd;
+}
+
+.borough-filter:hover .borough-dropdwn-content,
+.month-filter:hover .month-dropdwn-content{
+    display: block;
+}
+
+.borough-filter:hover .dropbtn-borough,
+.month-filter:hover .dropbtn-month {
+    background-color: #9cc3ff;
+}
