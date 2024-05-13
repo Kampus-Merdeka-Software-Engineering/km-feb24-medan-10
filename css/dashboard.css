@@ -46,12 +46,6 @@ ul {
     transition: transform 0.3s ease;
 }
 
-.dashboard-icon:hover,
-.addData-icon:hover,
-.feedback-icon:hover{
-    transform: scale(1.3);
-}
-
 .logOut-menu{
     display: flex;
     align-items: center;
@@ -64,4 +58,10 @@ ul {
 
 .logOut-icon{
     width: 23px;
+}
+
+.dashboard-icon:hover,
+.addData-icon:hover,
+.feedback-icon:hover{
+    transform: scale(1.3);
 }
