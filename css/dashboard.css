@@ -2,138 +2,31 @@
     text-decoration: none;
     margin: 0px;
     padding: 0px;
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    font-size: 36px; 
-    font-weight: 700;
-    font-style: normal; 
-    background-color: #ffffff;
-
-}
-
-header {
-    position: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    padding: 14px 3% 14px;
-    background-color: #008ddc;
-    opacity: 0.6;
-    height: 45px;
-    backdrop-filter: blur(70px);
-}
-
-.account-icon {
-    margin-right: 30px;
-    width: 45px;
-}
-
-.logo{
-    color: #fff;
-    font-weight: 700;
-    font-size: 28px;
-}
-
-.logo span{
-    color: #FFED4F;
-}
-
+/* --------- Navbar --------- */
 nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 48px 20px 10px ;
+    background-color: #109BFF;
+}
+
+.navbar{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 45px;
+    flex-direction: column;
+    gap: 90px;
 }
 
-.nav-button{
+.acc-icon-container{
     display: flex;
-    gap: 30px;
+    justify-content: center;
 }
 
-.nav-button a{
-    color: #ebebeb;
-    font-weight: 300;
-    font-size: 15px;
-    transition: 0.3 ease;
-}
-
-.nav-button a:hover,
-.nav-button a:active{
-    color: #fff;
-    font-weight:600;
-    transform: scale(1.1);
-}
-
-section {
-    padding: 25px;
-    padding-top: 10px;
-}
-
-.fisrtrow {
-    display: flex;
-    padding: 20px 20px 10px;
-    gap: 8px
-}
-
-.scorecards {
-    margin-top: 20px;
-}
-
-.titlegrafik {
-    font-family: "Poppins", sans-serif;
-    color: #008ddc; 
-    font-size: 18px; 
-    font-style: normal;
-    margin: 0;
-    padding-bottom: 5px;
-}
-
-.secrow {
-    display: flex;
-    padding: 0px 20px;
-    gap: 30px;
-}
-
-.titlegraftol1, .titlepiecharts {
-    font-family: "Poppins", sans-serif;
-    color: #008ddc; 
-    font-size: 18px; 
-    font-style: normal;
-    margin: 0;
-    padding-bottom: 5px;
-}
-
-.piecharts {
-    padding: 10px;
-    display: flex;
-    gap: 30px;
-}
-
-.piechart1 {
-    border-radius: 100%; 
-    padding-left: 40px;
-}
-
-.piechart2 {
-    border-radius: 100%; 
-    padding-left: 30px;
-}
-
-.thirdrow {
-    display: flex;
-    padding: 10px 20px 0px;
-    gap: 30px;
-}
-
-.search {
-    padding-top: 30px;
-}
-
-.tabeltotal {
-    padding-top: 30px;
+.account-icon{
+    width: 60px;
 }
