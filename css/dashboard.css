@@ -163,18 +163,55 @@ header{
 .month-filter:hover .dropbtn-month {
     background-color: #9cc3ff;
 }
-
-.borough-dropdwn-content a:hover,
-.month-dropdwn-content a:hover {
-    background-color: #ddd;
+main {
+    padding: 0px 45px 0px 170px;
 }
 
-.borough-filter:hover .borough-dropdwn-content,
-.month-filter:hover .month-dropdwn-content{
-    display: block;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 13px;
+    column-gap: 20px;
 }
 
-.borough-filter:hover .dropbtn-borough,
-.month-filter:hover .dropbtn-month {
-    background-color: #9cc3ff;
+.titles {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #109BFF;
+    padding-bottom: 3px;
+}
+
+.tabel {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.linetotal {
+    grid-column: span 4;
+}
+
+.totalavg {
+    grid-column: span 2;
+}
+
+.totalprop {
+    grid-column: span 2;
+}
+
+.scorecode1 {
+    padding-right: 5px;
+    margin: auto;
+} 
+
+.scorecode2 {
+    padding-left: 5px;
+    margin: auto;
+}
+
+.scoretotal, .scoreprop {
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    background-color: #cdcdcd;
 }
