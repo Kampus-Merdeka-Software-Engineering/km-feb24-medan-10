@@ -217,3 +217,59 @@ main {
     height: 40px;
     background-color: #cdcdcd;
 }
+
+/* --------------------- Main Content ------------------------ */
+main {
+    padding: 0px 45px 0px 170px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 13px;
+    column-gap: 20px;
+}
+
+.titles {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #109BFF;
+    padding-bottom: 3px;
+}
+
+.tabel {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.linetotal {
+    grid-column: span 4;
+}
+
+.totalavg {
+    grid-column: span 2;
+}
+
+.totalprop {
+    grid-column: span 2;
+}
+
+/* ----------  Chart Detail ---------- */
+
+.scorecode1 {
+    padding-right: 5px;
+    margin: auto;
+} 
+
+.scorecode2 {
+    padding-left: 5px;
+    margin: auto;
+}
+
+.scoretotal, .scoreprop {
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    background-color: #cdcdcd;
+}
