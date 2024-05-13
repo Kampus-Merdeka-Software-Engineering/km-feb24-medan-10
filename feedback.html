@@ -31,10 +31,10 @@
         </nav>
     </header>
 
-    
+    <main>
   	<div class="feedback-form">
         <div class="feedback-form-header">
-            <img src="assets/feedback.png" alt="Add Data Icon" class="logo">
+            <img src="assets/feedback.png" alt="Add Data Icon" class="add-dataIcon">
             <div class="header-desc">
             </div>
         </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-element">
                     <label for="email">Email</label>
-                    <input type="text" id="email" placeholder="Enter email">
+                    <input type="email" id="email" placeholder="Enter email">
                 </div>
 				<div class="form-element">
                     <label for="subject">Subject</label>
@@ -64,15 +64,19 @@
             </div>
         </form>
   	</div>
-
-      <script>
-        const textarea=document.querySelector("textarea");
-        textarea.addEventListener("keyup", e =>{
-            textarea.style.height="auto";
-            let scHeight = e.target.scrollHeight;
-            textarea.style.height= `${scHeight}px`;
-        });
-    </script>
-    
 </body>
+</main>
+
+<script>
+    const textarea=document.querySelector("textarea");
+    textarea.addEventListener("keyup", e =>{
+        textarea.style.height="auto";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height= `${scHeight}px`;
+    });
+</script>
+
+<footer>
+    <div>Team 10 - Section Medan </div>
+</footer>
 </html>
