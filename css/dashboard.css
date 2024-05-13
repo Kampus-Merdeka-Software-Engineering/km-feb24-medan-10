@@ -438,7 +438,7 @@ form input[type="text"] {
     }
 }
 
-/-------- mobile tablet ------/
+/*-------- mobile tablet ------*/
 @media (min-width: 768px) and (max-width: 1199px) {
     /* --------- Navbar --------- */
     nav {
