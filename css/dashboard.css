@@ -30,3 +30,38 @@ nav{
 .account-icon{
     width: 60px;
 }
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.dashboard-icon,
+.addData-icon,
+.feedback-icon{
+    width: 46px;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-icon:hover,
+.addData-icon:hover,
+.feedback-icon:hover{
+    transform: scale(1.3);
+}
+
+.logOut-menu{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 100px;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.logOut-icon{
+    width: 23px;
+}
