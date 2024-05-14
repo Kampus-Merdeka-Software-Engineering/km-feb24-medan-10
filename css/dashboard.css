@@ -341,16 +341,36 @@ form input[type="text"] {
 @media (max-width: 767px) {
     /* --------- Navbar --------- */
     nav {
-        width: 70px; 
-        padding: 70px 10px; 
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+        position: relative;
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
+        gap: 70px;
+    }
+    ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+    li {
+        float: none;
     }
     .account-icon{
-        width: 35px;
+        width: 50px;
     }
     .dashboard-icon,
     .addData-icon,
     .feedback-icon{
-    width: 30px;  
+        width: 25px;
+        margin-left: 20px;
+    }
+    .logOut-menu{
+        padding-top: 0;
     }
     .logOut-icon{
         width: 20px;
