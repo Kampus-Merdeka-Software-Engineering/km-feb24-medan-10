@@ -12,6 +12,16 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css"
+    />
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
@@ -75,11 +85,19 @@
             Borough <img src="assets/dorpdown arrow.png" />
           </button>
           <div class="borough-dropdwn-content">
-            <a href="#" onclick="getTotalPropertyByBorough(1,'Brooklyn')">Brooklyn</a>
+            <a href="#" onclick="getTotalPropertyByBorough(1,'Brooklyn')"
+              >Brooklyn</a
+            >
             <a href="#" onclick="getTotalPropertyByBorough(2,'Bronx')">Bronx</a>
-            <a href="#" onclick="getTotalPropertyByBorough(3,'Manhattan')">Manhattan</a>
-            <a href="#" onclick="getTotalPropertyByBorough(4,'Queens')">Queens</a>
-            <a href="#" onclick="getTotalPropertyByBorough(5,'Staten Island')">Staten Island</a>
+            <a href="#" onclick="getTotalPropertyByBorough(3,'Manhattan')"
+              >Manhattan</a
+            >
+            <a href="#" onclick="getTotalPropertyByBorough(4,'Queens')"
+              >Queens</a
+            >
+            <a href="#" onclick="getTotalPropertyByBorough(5,'Staten Island')"
+              >Staten Island</a
+            >
           </div>
         </div>
         <!-- <div class="line"><div></div></div> -->
@@ -113,25 +131,17 @@
         <div class="scorecode2">
           <div class="titles">Total Building/Property</div>
           <div class="scoreprop">
-            <p id="total-building">
-
-            </p>
+            <p id="total-building"></p>
           </div>
         </div>
         <div class="tabel">
           <div class="titles">Tabel</div>
           <div class="tabelrec">
             <div class="form">
-              <form action="" method="POST">
-                <div class="form-input">
-                  <input
-                    type="text"
-                    id="search"
-                    name="search"
-                    placeholder="Search"
-                  />
-                </div>
-              </form>
+              <div>
+                <table id="data-table-example">
+                </table>
+              </div>
             </div>
           </div>
         </div>

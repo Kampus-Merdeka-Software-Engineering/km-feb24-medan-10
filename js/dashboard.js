@@ -9,6 +9,14 @@ fetch('json/nycPropSales.json')
         window.propertyData = data;
         document.getElementById('total-building').innerText = data.length;
         createTotalPropertySalesByBorough();
+        let table = new DataTable('#data-table-example', {
+            data : window.propertyData,
+            columns : [
+                { data: 'NEIGHBORHOOD' },
+                { data: 'YEAR_BUILT' },
+                { data: 'SALE_PRICE' }
+            ]
+        });
     });
 
 function getTotalPropertyByBorough(id,boroughName){

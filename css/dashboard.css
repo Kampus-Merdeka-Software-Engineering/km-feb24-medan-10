@@ -220,8 +220,7 @@ main {
 
 .tabelrec {
     padding: 10px;
-    height: 200px;
-    background-color: #cdcdcd;
+    min-height: 200px;
 }
 
 .piechart1, .piechart2 {
