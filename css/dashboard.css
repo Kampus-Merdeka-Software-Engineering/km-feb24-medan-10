@@ -240,7 +240,7 @@ main {
 
 .linechartotal {
     padding: 10px;
-    height: 100px;
+    min-height: 100px;
     background-color: #cdcdcd;
 }
 
@@ -553,4 +553,14 @@ form input[type="text"] {
         padding: 10px; 
         border-radius: 20px; 
     }
+}
+
+#total-building{
+    width: 100%;
+    text-align: center;
+}
+
+#line-property-sales{
+    width: 100%;
+    height: auto;
 }
