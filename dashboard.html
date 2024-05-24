@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYC PROPERTY SALES</title>
     <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,7 +104,9 @@
             </div>
             <div class="piechart2">
                 <div class="titles">Total Property Sales Per Borough</div>
-                <div class="pietotal"></div>
+                <div class= "pietotal" >
+                    <canvas id= "pie-total-property-sales"></canvas>
+                </div>
             </div>  
 
             <div class="linetotal">
@@ -123,5 +127,8 @@
     <footer>
         <div class="footertitle">Copyright &copy; Section Medan Team 10 RevoU</div>
     </footer>
+
+    <script src="js/pie-totalProperty.js"></script>            
+    
 </body>
 </html>
