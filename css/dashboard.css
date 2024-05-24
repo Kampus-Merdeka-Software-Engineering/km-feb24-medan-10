@@ -269,6 +269,11 @@ table th {
     padding: 10px;
 }
 
+#piechart-avg{
+    max-height: 255px;
+    max-width: 255px;
+}
+
 .pietotal {
     padding: 10px;
 }
