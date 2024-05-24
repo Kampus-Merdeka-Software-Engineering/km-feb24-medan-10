@@ -192,6 +192,17 @@ main {
     grid-row: span 2;
 }
 
+.tabel_header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    color: #109BFF;
+    padding-bottom: 3px;
+
+}
+
 .linetotal {
     grid-column: span 4;
 }
@@ -220,8 +231,32 @@ main {
 
 .tabelrec {
     padding: 10px;
-    height: 200px;
-    background-color: #cdcdcd;
+    min-height: 200px;
+    background-color: white;
+    overflow: auto;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* table.dataTable th.sorting_1,table.dataTable td.sorting_1{
+    text-align: right;
+}
+table.dataTable th.dt-type-numeric,table.dataTable td.dt-type-numeric{
+    text-align: center;
+}
+table.dataTable th.dt-type-date,table.dataTable td.dt-type-date{
+    text-align: center;
+}  */ 
+
+table th {
+    position: sticky;
+    top : 0;
+    background-color:#4B93FF;
+    color: #FFE713;
+    font-size: 15px;
 }
 
 .piechart1, .piechart2 {
@@ -265,25 +300,6 @@ main {
     height: 120px;
     background-color: #cdcdcd;
 }
-
-/* ----- Search Bar for TABLE ----- */
-form {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.form-input {
-    width: 100%;
-}
-
-form input[type="text"] {
-    width: 100%;
-    font-size: 10px;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-}
-
 /* -------------- Footer --------------- */
 .footertitle {
     padding-top: 27px;
