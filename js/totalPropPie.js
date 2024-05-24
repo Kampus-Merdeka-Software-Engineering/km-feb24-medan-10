@@ -32,7 +32,7 @@ function createTotalPropertySalesByBorough(){
     new Chart(ctx, {
         type: 'pie',
         data: {
-          labels: ['Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island'],
+          labels: ['Manhattan', 'Bronx', 'Brooklyn', 'Queens', 'Staten Island'],
           datasets: [{
             label: 'Total Property Sales',
             data: dataForChart,
