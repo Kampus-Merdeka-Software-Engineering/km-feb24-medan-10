@@ -1,4 +1,4 @@
-fetch('json/nycPropSales.json')
+fetch('json/forTable.json')
     .then((response) => {
         return response.json();
     })
@@ -8,8 +8,10 @@ fetch('json/nycPropSales.json')
         let table = new DataTable('#data-tabel', {
             data : window.propertyData,
             columns : [
+                { data: 'BOROUGH' },
                 { data: 'NEIGHBORHOOD' },
                 { data: 'YEAR_BUILT' },
+                { data: 'BUILDING_CLASS_CATEGORY' },
                 { data: 'SALE_PRICE' }
             ]
         });
