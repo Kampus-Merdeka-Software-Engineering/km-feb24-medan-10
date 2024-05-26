@@ -1,51 +1,81 @@
+let sortedLabels = [];
+let sortedData = [];
+
 fetch('json/nycPropSales.json')
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        window.propertyData = data;
-        createTotalPropertySalesByYearBuilt();
+.then((response) => response.json())
+.then((data) => {
+    // Inisialisasi objek untuk menyimpan total penjualan berdasarkan tahun pembangunan
+    const salesByYearBuilt = {};
+
+    // Loop melalui data properti untuk menghitung total penjualan berdasarkan tahun pembangunan
+    data.forEach((property) => {
+        const yearBuilt = property.YEAR_BUILT;
+        const salePrice = parseFloat(property.SALE_PRICE || 0);
+
+        // Tambahkan penjualan ke total penjualan untuk tahun pembangunan yang sesuai
+        if (!salesByYearBuilt[yearBuilt]) {
+            salesByYearBuilt[yearBuilt] = salePrice;
+        } else {
+            salesByYearBuilt[yearBuilt] += salePrice;
+        }
     });
 
-function createTotalPropertySalesByYearBuilt(){
-    const ctx = document.getElementById('bar-total-property-sales');
-    var arrTotalPropSales = { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0 };
-    var totalSales = 0;
-    }
+    // Siapkan data untuk diagram batang
+    sortedLabels = Object.keys(salesByYearBuilt);
+    sortedData = Object.values(salesByYearBuilt);
 
-    console.log(arrTotalPropSales)
+    // Buat diagram batang menggunakan Chart.js
+    createChart(sortedLabels, sortedData);
+})
+.catch((error) => {
+    console.error('Error fetching the property data:', error);
+});
 
-    var dataForChart = [];
-    var dataForTooltip = [];
-
-    new Chart(ctx, {
+function createChart(labels, data) {
+    const ctx = document.getElementById('propertySalesByYearBuiltChart').getContext('2d');
+    const propertySalesByYearBuiltChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['1920', '1930', '1925', '1910', '1950', '1940', '1955', '1931', '2015'],
-          datasets: [{
-            label: 'Total Property Sales based on Year Built',
-            data: dataForChart,
-            borderWidth: 1
-          }]
+            labels: labels,
+            datasets: [{
+                label: 'Total Property Sales',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
         },
         options: {
-            indexAxis: 'y',
-          plugins: {
-            legend: {
-              position: 'top',
-              labels: {
-                boxWidth: 12,
-              }
-            },
-            tooltip: {
-              // callbacks: {
-              //   label: function(context) {
-              //     var label = context.label;
-              //     var value = context.formattedValue;
-              //     return label + ': ' + value;
-              //   }
-              // }
+            indexAxis: 'y', // Mengatur orientasi sumbu x menjadi sumbu y
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Year Built'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Total Sales ($)'
+                    }
+                }
             }
-          }
         }
-      });
+    });
+}
+
+function sortData(order) {
+    if (order === 'asc') {
+        sortedLabels.sort();
+        sortedData.sort((a, b) => sortedLabels.indexOf(a) - sortedLabels.indexOf(b));
+    } else if (order === 'desc') {
+        sortedLabels.sort().reverse();
+        sortedData.sort((a, b) => sortedLabels.indexOf(b) - sortedLabels.indexOf(a));
+    }
+    
+    // Memperbarui chart dengan data yang sudah diurutkan
+    propertySalesByYearBuiltChart.destroy();
+    createChart(sortedLabels, sortedData);
+}
