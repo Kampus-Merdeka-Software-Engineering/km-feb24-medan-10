@@ -4,15 +4,12 @@ let sortedData = [];
 fetch('json/nycPropSales.json')
 .then((response) => response.json())
 .then((data) => {
-    // Inisialisasi objek untuk menyimpan total penjualan berdasarkan tahun pembangunan
     const salesByYearBuilt = {};
 
-    // Loop melalui data properti untuk menghitung total penjualan berdasarkan tahun pembangunan
     data.forEach((property) => {
         const yearBuilt = property.YEAR_BUILT;
         const salePrice = parseFloat(property.SALE_PRICE || 0);
 
-        // Tambahkan penjualan ke total penjualan untuk tahun pembangunan yang sesuai
         if (!salesByYearBuilt[yearBuilt]) {
             salesByYearBuilt[yearBuilt] = salePrice;
         } else {
@@ -20,11 +17,9 @@ fetch('json/nycPropSales.json')
         }
     });
 
-    // Siapkan data untuk diagram batang
     sortedLabels = Object.keys(salesByYearBuilt);
     sortedData = Object.values(salesByYearBuilt);
 
-    // Buat diagram batang menggunakan Chart.js
     createChart(sortedLabels, sortedData);
 })
 .catch((error) => {
@@ -75,7 +70,6 @@ function sortData(order) {
         sortedData.sort((a, b) => sortedLabels.indexOf(b) - sortedLabels.indexOf(a));
     }
     
-    // Memperbarui chart dengan data yang sudah diurutkan
     propertySalesByYearBuiltChart.destroy();
     createChart(sortedLabels, sortedData);
 }
