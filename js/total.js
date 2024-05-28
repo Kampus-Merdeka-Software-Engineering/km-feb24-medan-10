@@ -26,7 +26,7 @@ fetch('json/nycPropSales.json')
         data: {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             datasets: boroughs.map((borough, index) => ({
-                label: `Total Property Sales in ${borough}`,
+                label: `${borough}`,
                 data: salesPerMonth[index],
                 borderColor: `rgba(${75 + index * 40}, ${192 - index * 30}, ${192 - index * 30}, 1)`,
                 backgroundColor: `rgba(${75 + index * 40}, ${192 - index * 30}, ${192 - index * 30}, 0.2)`,
