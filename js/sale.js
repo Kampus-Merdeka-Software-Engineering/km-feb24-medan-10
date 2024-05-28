@@ -35,5 +35,4 @@ function getTotalPropertyByMonth(id, monthName) {
         return saleDate.getMonth() + 1 === id;
     });
   
-    document.getElementById('total-building').innerText = arrayFiltered.length;
 }
