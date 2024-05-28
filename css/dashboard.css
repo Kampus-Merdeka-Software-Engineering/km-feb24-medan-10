@@ -210,7 +210,7 @@ main {
 }
 
 .totalavg, .totalprop{
-    grid-column: span 2;
+    grid-column: span 4;
     padding-top: 40px;
 }
 
@@ -293,24 +293,13 @@ table th {
     max-width: 255px;
 }
 
-.linechartotal {
+.linechartotal, .totalavgchart, .linechartprop {
     padding: 10px;
     background-color: #c0bebe2c;
 }
 
-.totalavgchart {
-    padding: 10px;
-    background-color: #c0bebe2c;
-}
 
-.linechartprop {
-    padding: 10px;
-    background-color: #c0bebe2c;
-}
-
-#propertySalesByYearBuiltChart, 
-#propertySalesChart, 
-#salesVsAvgPriceChart{
+#propertySalesChart, #salesVsAvgPriceChart, #propertySalesByYearBuiltChart{
     max-width: 100%;
 }
 
@@ -460,14 +449,15 @@ form input[type="text"] {
         height: 48px;
     }
     
-    .piechart1{
-        gap: 17px;
+    .piechart1, .piechart2{
+        gap: 10px;
+        grid-column: span 1;
     }
-    
-    .pieavg, .pietotal {
-        width: 109px;
-        height: 109x;
-    }
+
+    /* #piechart-avg, #pie-total-property-sales{
+        max-height: 200px;
+        max-width: 200px;
+    } */
     
     .linechartotal {
         padding: 10px;
