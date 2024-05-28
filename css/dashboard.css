@@ -600,3 +600,9 @@ form input[type="text"] {
         border-radius: 20px; 
     }
 }
+
+.totalprop .filter-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}

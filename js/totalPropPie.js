@@ -37,7 +37,13 @@ function createTotalPropertySalesByBorough(){
             label: 'Total Property Sales',
             data: dataForChart,
             borderWidth: 1
-          }]
+          },
+          {
+            label: 'Percentage (%)',
+            data: dataForChart,
+            borderWidth: 1
+          }
+        ]
         },
         options: {
           plugins: {
