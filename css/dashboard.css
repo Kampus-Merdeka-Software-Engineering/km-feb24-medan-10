@@ -153,6 +153,7 @@ header{
     text-decoration: none;
     display: block;
 }
+
 .borough-dropdwn-content a:hover,
 .month-dropdwn-content a:hover {
     background-color: #ddd;
@@ -253,6 +254,10 @@ table{
     table-layout: fixed;
 }
 
+#data-tabel{
+    font-size: 14px;
+}
+
 /* table.dataTable th.sorting_1,table.dataTable td.sorting_1{
     text-align: right;
 }
@@ -290,27 +295,25 @@ table th {
 
 .linechartotal {
     padding: 10px;
-    background-color: #c0bebe3f;
-}
-
-#propertySalesChart{
-    max-width: 100%;
+    background-color: #c0bebe2c;
 }
 
 .totalavgchart {
     padding: 10px;
-    height: 120px;
-    background-color: #cdcdcd;
+    background-color: #c0bebe2c;
 }
 
 .linechartprop {
     padding: 10px;
-    background-color: #c0bebe3f;
+    background-color: #c0bebe2c;
 }
 
-#propertySalesByYearBuiltChart{
+#propertySalesByYearBuiltChart, 
+#propertySalesChart, 
+#salesVsAvgPriceChart{
     max-width: 100%;
 }
+
 /* ----- Search Bar for TABLE ----- */
 /* form {
     padding-left: 10px;
@@ -330,7 +333,7 @@ form input[type="text"] {
 } */
 /* -------------- Footer --------------- */
 .footertitle {
-    padding-top: 27px;
+    padding: 27px 45px 10px 150px;
     text-align: center;
     font-size: 12px;
     color: black;
