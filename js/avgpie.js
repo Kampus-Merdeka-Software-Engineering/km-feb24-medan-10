@@ -28,6 +28,8 @@ fetch('json/nycPropSales.json')
             }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                     position: 'top',
@@ -35,7 +37,7 @@ fetch('json/nycPropSales.json')
                         boxWidth: 12,
                         }
                     }
-                }
+                },
         }
         });
     }

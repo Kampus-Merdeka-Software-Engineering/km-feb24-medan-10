@@ -34,11 +34,13 @@ fetch('json/nycPropSales.json')
             }))
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true
                 }
-            }
+            },
         }
     });
 })

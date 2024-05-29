@@ -41,6 +41,8 @@ function createChart(labels, data) {
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             indexAxis: 'y', // Mengatur orientasi sumbu x menjadi sumbu y
             scales: {
                 y: {
