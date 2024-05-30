@@ -4,7 +4,6 @@ fetch('json/nycPropSales.json')
     })
     .then((data) => {
         window.propertyData = data;
-        console.log(data)
         createPieAvgPrice();
     });
 

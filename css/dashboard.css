@@ -298,28 +298,10 @@ table th {
     background-color: #c0bebe2c;
 }
 
-
 #propertySalesChart, #salesVsAvgPriceChart, #propertySalesByYearBuiltChart{
     max-width: 100%;
 }
 
-/* ----- Search Bar for TABLE ----- */
-/* form {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.form-input {
-    width: 100%;
-}
-
-form input[type="text"] {
-    width: 100%;
-    font-size: 10px;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-} */
 /* -------------- Footer --------------- */
 .footertitle {
     padding: 27px 45px 10px 150px;

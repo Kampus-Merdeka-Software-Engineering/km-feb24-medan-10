@@ -19,8 +19,6 @@ function createTotalPropertySalesByBorough(){
         totalSales += arrSalePriceFiltered.length;
     }
 
-    console.log(arrTotalPropSales)
-
     var dataForChart = [];
     var dataForTooltip = [];
     for(var i = 1; i <= 5; i++){

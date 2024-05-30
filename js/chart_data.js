@@ -10,12 +10,14 @@ fetch('json/nycPropSales.json')
         const salePrice = parseFloat(property.SALE_PRICE || 0);
 
         // Total Sales by Building Class
-        if (!salesByBuildingClass[buildingClass]) {
-            salesByBuildingClass[buildingClass] = salePrice;
-        } else {
-            salesByBuildingClass[buildingClass] += salePrice;
+        if (salePrice > 0) {
+            if (!salesByBuildingClass[buildingClass]) {
+                salesByBuildingClass[buildingClass] = 1;
+            } else {
+                salesByBuildingClass[buildingClass] += 1;
+            }
         }
-
+         
         // Avg Sales Price by Building Class
         if (!avgPriceByBuildingClass[buildingClass]) {
             avgPriceByBuildingClass[buildingClass] = [salePrice, 1]; // [totalPrice, count]
@@ -57,8 +59,8 @@ fetch('json/nycPropSales.json')
             }]
         },
         options: {
-            responsive: true,
-            maintainAspectRatio: false,
+            // responsive: true,
+            // maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true,
@@ -67,7 +69,7 @@ fetch('json/nycPropSales.json')
                         text: 'Dollar ($)'
                     }
                 }
-            },
+            }
         }
     });
 })
