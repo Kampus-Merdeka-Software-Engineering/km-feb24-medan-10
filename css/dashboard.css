@@ -534,49 +534,82 @@ table th {
     }
 
     /* --------------------- Main Content ------------------------ */
-    .titles {
-        font-size: 15px;
-    }
-
     main {
-        margin-left: 20px;
         padding: 0 15px; 
     }
 
     .grid-container {
-        grid-template-columns: auto; 
+       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         row-gap: 20px;
     }
-
-    .tabel, .linetotal, .totalavg, .totalprop {
-        grid-column: auto; 
+    .tabel {
+        grid-column: span 4;
+        grid-row: span 2;
+        padding: 20px;
     }
 
-    /* ----------  Chart Detail ---------- */
-    .scorecode1, .scorecode2 {
-        margin-top: 20px;
-        padding: 10px 20px;
+    .tabel_header {
+        font-size: 18px;
     }
 
-    .scoreprop {
-        margin-left: 5px;
+    .tabelrec {
+        padding: 20px;
+        min-height: 350px;
+        background-color: white;
+        overflow: auto;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    table th {
+        font-size: 17px;
+    }
+
+    #data-tabel {
+        font-size: 15px;
     }
     
-    .tabelrec, .piechart1, .piechart2, .linechartotal, .totalavgchart, .linechartprop {
-        margin: 10px 5px; 
+
+    /* ----------  Chart Detail ---------- */
+    .piechart-container {
+        display: flex;
+        flex-direction: column;
+    
+
+    }
+    .piechart1,
+    .piechart2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+        grid-column: span 1;
+    }
+    #piechart-avg,
+    #pie-total-property-sales {
+        max-height: 300px;
+        max-width: 300px;
     }
 
-    form {
-        padding: 0; 
+    .linechartotal,
+    .totalavgchart,
+    .linechartprop {
+        padding: 10px;
     }
 
-    .form-input {
-        width: 100%;
+    #propertySalesChart,
+    #salesVsAvgPriceChart,
+    #propertySalesByYearBuiltChart {
+        max-width: 100%;
     }
 
-    form input[type="text"] {
-        font-size: 12px; 
-        padding: 10px; 
-        border-radius: 20px; 
+    /* -------------- Footer --------------- */
+    .footertitle {
+        padding: 20px 10px 5px;
+        text-align: center;
+        font-size: 10px;
+        color: black;
     }
 }
