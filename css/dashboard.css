@@ -421,25 +421,10 @@ table th {
         row-gap: 10px;
     }
 
-    /* .tabelrec{
-        grid-column: auto;
-    }
-
-    .linetotal {
-        grid-column: span 2;
-    }
-
-    .totalavg,
-    .totalprop {
-        grid-column: auto auto;
-    } */
-
     /* ----------  Chart Detail ---------- */
     .scoretotal, .scoreprop {
-        display: inline-flex;
-        max-width: 150px;
         padding: 0px;
-        margin: 0;
+        margin-left: 8px;
         align-items: center;
     }
 
@@ -449,20 +434,36 @@ table th {
     }
     
     .tabel {
-        max-width: 200px;
+        grid-column: span 4;
+        grid-row: span 2;
+        max-width: 400px;
         padding: 0px;
         margin: 0;
     }
 
-    .piechart1, .piechart2{
-        gap: 10px;
-        /* grid-column: span 1; */
+    #data-tabel {
+        max-width: 600px;
     }
 
-    /* #piechart-avg, #pie-total-property-sales{
-        max-height: 200px;
-        max-width: 200px;
-    } */
+    .piechart1, .piechart2{
+        grid-column: span 4;
+        grid-row: span 2;
+        gap: 10px;
+    }
+
+    .linetotal, .totalavg, .totalprop {
+        padding-right: 20px;
+    }
+
+    /* Footer */
+    .footertitle {
+        padding: 27px 0 10px 0;
+        margin-left: 60px;
+        text-align: center;
+        font-size: 12px;
+        color: black;
+    }
+    
 }
 
 /*-------- mobile tablet ------*/
@@ -542,49 +543,88 @@ table th {
     }
 
     /* --------------------- Main Content ------------------------ */
-    .titles {
-        font-size: 15px;
-    }
-
     main {
-        margin-left: 20px;
         padding: 0 15px; 
     }
 
     .grid-container {
-        grid-template-columns: auto; 
+       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         row-gap: 20px;
     }
-
-    .tabel, .linetotal, .totalavg, .totalprop {
-        grid-column: auto; 
+    .tabel {
+        grid-column: span 4;
+        grid-row: span 2;
+        padding: 20px;
     }
 
-    /* ----------  Chart Detail ---------- */
-    .scorecode1, .scorecode2 {
-        margin-top: 20px;
-        padding: 10px 20px;
+    .tabel_header {
+        font-size: 18px;
     }
 
-    .scoreprop {
-        margin-left: 5px;
+    .tabelrec {
+        padding: 20px;
+        min-height: 350px;
+        background-color: white;
+        overflow: auto;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    table th {
+        font-size: 17px;
+    }
+
+    #data-tabel {
+        font-size: 15px;
     }
     
-    .tabelrec, .piechart1, .piechart2, .linechartotal, .totalavgchart, .linechartprop {
-        margin: 10px 5px; 
+
+    /* ----------  Chart Detail ---------- */
+    .piechart-container {
+        display: flex;
+        flex-direction: column;
+    
+
+    }
+    .piechart1,
+    .piechart2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+        grid-column: span 1;
+    }
+    #piechart-avg,
+    #pie-total-property-sales {
+        max-height: 300px;
+        max-width: 300px;
     }
 
-    form {
-        padding: 0; 
+    .linechartotal,
+    .totalavgchart,
+    .linechartprop {
+        padding: 10px;
     }
 
-    .form-input {
-        width: 100%;
+    #propertySalesChart,
+    #salesVsAvgPriceChart,
+    #propertySalesByYearBuiltChart {
+        max-width: 100%;
     }
-
-    form input[type="text"] {
-        font-size: 12px; 
-        padding: 10px; 
-        border-radius: 20px; 
+    
+.totalprop .filter-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+    
+    /* -------------- Footer --------------- */
+    .footertitle {
+        padding: 20px 10px 5px;
+        text-align: center;
+        font-size: 10px;
+        color: black;
     }
 }
