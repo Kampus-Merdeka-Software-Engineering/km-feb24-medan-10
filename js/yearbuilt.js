@@ -15,19 +15,22 @@ fetch("json/nycPropSales.json")
       const yearBuilt = property.YEAR_BUILT;
       const salePrice = parseFloat(property.SALE_PRICE || 0);
 
-      if (!salesByYearBuilt[yearBuilt]) {
-        salesByYearBuilt[yearBuilt] = salePrice;
-        dataSalesByYearBuilt.push({
-          yearBuilt: yearBuilt,
-          salePrice: salePrice,
-        });
-      } else {
-        salesByYearBuilt[yearBuilt] += salePrice;
-        var index = dataSalesByYearBuilt.findIndex(
-          (item) => item.yearBuilt === yearBuilt
-        );
-        dataSalesByYearBuilt[index].salePrice += salePrice;
+      if(salePrice>0){
+        if (!salesByYearBuilt[yearBuilt]) {
+          salesByYearBuilt[yearBuilt] = 1;
+          dataSalesByYearBuilt.push({
+            yearBuilt: yearBuilt,
+            totalSales: 1,
+          });
+        } else {
+          salesByYearBuilt[yearBuilt] += 1;
+          var index = dataSalesByYearBuilt.findIndex(
+            (item) => item.yearBuilt === yearBuilt
+          );
+          dataSalesByYearBuilt[index].totalSales += 1;
+        }
       }
+      
     });
 
     dataSalesByYearBuilt.sort((a, b) => b.yearBuilt - a.yearBuilt);
@@ -42,9 +45,10 @@ fetch("json/nycPropSales.json")
   });
 
 function createChart(labels, data) {
-  const ctx = document
-    .getElementById("propertySalesByYearBuiltChart")
-    .getContext("2d");
+  const ctx = document.getElementById("propertySalesByYearBuiltChart").getContext("2d");
+  ctx.canvas.height = 300;
+
+
   const propertySalesByYearBuiltChart = new Chart(ctx, {
     type: "bar",
     data: {
@@ -60,6 +64,8 @@ function createChart(labels, data) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       indexAxis: "y", // Mengatur orientasi sumbu x menjadi sumbu y
       scales: {
         y: {

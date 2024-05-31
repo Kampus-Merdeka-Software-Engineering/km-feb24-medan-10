@@ -1,3 +1,15 @@
+let sortedLabelsTotal = [];
+let sortedDataTotal = [];
+let sortedLabelsAvg = [];
+let sortedDataAvg= [];
+
+
+let chartTotalUpdate = null;
+let chartAvgUpdate = null;
+let dataTotal = [];
+let dataAvg = [];
+
+
 fetch('json/nycPropSales.json')
 .then((response) => response.json())
 .then((data) => {
@@ -13,14 +25,23 @@ fetch('json/nycPropSales.json')
         if (salePrice > 0) {
             if (!salesByBuildingClass[buildingClass]) {
                 salesByBuildingClass[buildingClass] = 1;
+                dataTotal.push({
+                    buildingClass:buildingClass,
+                    totalSales: 1,
+                })
             } else {
                 salesByBuildingClass[buildingClass] += 1;
+                let index = dataTotal.findIndex(
+                    (item) => item.buildingClass === buildingClass
+                );
+                dataTotal[index].totalSales +=1;
             }
         }
          
         // Avg Sales Price by Building Class
         if (!avgPriceByBuildingClass[buildingClass]) {
             avgPriceByBuildingClass[buildingClass] = [salePrice, 1]; // [totalPrice, count]
+
         } else {
             avgPriceByBuildingClass[buildingClass][0] += salePrice;
             avgPriceByBuildingClass[buildingClass][1] += 1;
@@ -33,7 +54,21 @@ fetch('json/nycPropSales.json')
         avgPriceByBuildingClass[buildingClass] = totalPrice / count;
     });
 
-    console.log(avgPriceByBuildingClass);
+    // Sort data berdasarkan total sales dan average sales
+    dataTotal.sort((a,b)=> b.totalSales - a.totalSales);
+    
+    dataAvg = Object.keys(avgPriceByBuildingClass).map((buildingClass) => ({
+        buildingClass: buildingClass,
+        avgPrice: avgPriceByBuildingClass[buildingClass]
+    }));
+    dataAvg.sort((a, b) => b.avgPrice - a.avgPrice);
+
+    sortedLabelsTotal = Object.keys(dataTotal);
+    sortedDataTotal = Object.values(dataTotal);
+
+    sortedLabelsAvg = Object.keys(dataAvg);
+    sortedDataAvg = Object.keys(dataAvg);
+
     // Siapkan data untuk grafik
     const labels = Object.keys(salesByBuildingClass);
     const totalSalesData = Object.values(salesByBuildingClass);
