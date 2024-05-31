@@ -10,11 +10,13 @@ fetch('json/nycPropSales.json')
         const yearBuilt = property.YEAR_BUILT;
         const salePrice = parseFloat(property.SALE_PRICE || 0);
 
-        if (!salesByYearBuilt[yearBuilt]) {
-            salesByYearBuilt[yearBuilt] = salePrice;
-        } else {
-            salesByYearBuilt[yearBuilt] += salePrice;
-        }
+        if(salePrice > 0){
+            if (!salesByYearBuilt[yearBuilt]) {
+                salesByYearBuilt[yearBuilt] = 1;
+            } else {
+                salesByYearBuilt[yearBuilt] += 1;
+            }
+        } 
     });
 
     sortedLabels = Object.keys(salesByYearBuilt);
@@ -28,6 +30,8 @@ fetch('json/nycPropSales.json')
 
 function createChart(labels, data) {
     const ctx = document.getElementById('propertySalesByYearBuiltChart').getContext('2d');
+    ctx.canvas.height = 255;
+
     const propertySalesByYearBuiltChart = new Chart(ctx, {
         type: 'bar',
         data: {

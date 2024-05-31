@@ -165,6 +165,21 @@
 
                 <div class="totalavg">
                     <div class="titles">Total Sales Vs Avg Sales Price Per Building Class Category</div>
+                    <div class="total-avg-filter-area">
+                        <form onsubmit="sortDataTotalVsAvgSales(event)">
+                          <label for="total-avg-sort-by">Sort By: </label>
+                          <select id="total-avg-sort-by" name="total-avg-sort-by">
+                            <option value="totalSales" selected>Total Sales</option>
+                            <option value="avgSales">Average Sales</option>
+                          </select>
+                          <label for="total-avg-order-by">Order By: </label>
+                          <select id="total-avg-order-by" name="total-avg-order-by">
+                            <option value="asc" selected>Ascending</option>
+                            <option value="desc">Descending</option>
+                          </select>
+                          <input type="submit" value="Apply" />
+                        </form>
+                      </div>
                     <div class="totalavgchart">
                         <canvas id="salesVsAvgPriceChart"></canvas>
                     </div>

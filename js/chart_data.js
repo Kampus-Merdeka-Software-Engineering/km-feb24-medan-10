@@ -33,6 +33,7 @@ fetch('json/nycPropSales.json')
         avgPriceByBuildingClass[buildingClass] = totalPrice / count;
     });
 
+    console.log(avgPriceByBuildingClass);
     // Siapkan data untuk grafik
     const labels = Object.keys(salesByBuildingClass);
     const totalSalesData = Object.values(salesByBuildingClass);
@@ -40,6 +41,8 @@ fetch('json/nycPropSales.json')
 
     // Buat grafik menggunakan Chart.js
     const ctx = document.getElementById('salesVsAvgPriceChart').getContext('2d');
+    ctx.canvas.height = 400;
+
     const salesVsAvgPriceChart = new Chart(ctx, {
         type: 'line', // Ubah menjadi line chart
         data: {
@@ -59,8 +62,8 @@ fetch('json/nycPropSales.json')
             }]
         },
         options: {
-            // responsive: true,
-            // maintainAspectRatio: false,
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true,

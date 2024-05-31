@@ -21,6 +21,9 @@ fetch('json/nycPropSales.json')
 
     // Buat grafik garis menggunakan Chart.js
     const ctx = document.getElementById('propertySalesChart').getContext('2d');
+    ctx.canvas.height = 255;
+    
+    
     const propertySalesChart = new Chart(ctx, {
         type: 'line',
         data: {
