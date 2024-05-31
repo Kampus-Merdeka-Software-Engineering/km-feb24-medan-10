@@ -17,17 +17,17 @@ fetch("json/nycPropSales.json")
 
       if(salePrice>0){
         if (!salesByYearBuilt[yearBuilt]) {
-          salesByYearBuilt[yearBuilt] = 1;
+          salesByYearBuilt[yearBuilt] = salePrice;
           dataSalesByYearBuilt.push({
             yearBuilt: yearBuilt,
-            totalSales: 1,
+            salePrice: salePrice,
           });
         } else {
-          salesByYearBuilt[yearBuilt] += 1;
+          salesByYearBuilt[yearBuilt] += salePrice;
           var index = dataSalesByYearBuilt.findIndex(
             (item) => item.yearBuilt === yearBuilt
           );
-          dataSalesByYearBuilt[index].totalSales += 1;
+          dataSalesByYearBuilt[index].salePrice += salePrice;
         }
       }
       
