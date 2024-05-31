@@ -307,6 +307,12 @@ table th {
     font-weight: 400;
 }
 
+.totalprop .filter-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
 #propertySalesChart, #salesVsAvgPriceChart, #propertySalesByYearBuiltChart{
     max-width: 100%;
 }
@@ -613,12 +619,6 @@ table th {
     #propertySalesByYearBuiltChart {
         max-width: 100%;
     }
-    
-.totalprop .filter-area {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
-}
     
     /* -------------- Footer --------------- */
     .footertitle {

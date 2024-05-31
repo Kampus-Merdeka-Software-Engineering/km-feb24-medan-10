@@ -184,50 +184,51 @@
                         <canvas id="salesVsAvgPriceChart"></canvas>
                     </div>
                     <script src="js/chart_data.js"></script>
-                </div>
+                    </div>
 
-                <div class="totalprop">
-                    <div class="titles">Total Property Sales Based On Year Build</div>
+                    <div class="totalprop">
+                        <div class="titles">Total Property Sales Based On Year Build</div>
+                        <div class="filter-area">
+                        <form onsubmit="filterDataSalesByYearBuilt(event)">
+                            <label for="year-built-from">From Year Built: </label>
+                                <input
+                                    type="number"
+                                    id="year-built-from"
+                                    name="year-built-from"
+                                    min="1111"
+                                    max="2017"
+                                />
+                            <label for="year-built-to">To Year Built: </label>
+                                <input
+                                    type="number"
+                                    id="year-built-to"
+                                    name="year-built-to"
+                                    min="1111"
+                                    max="2017"
+                                />
+                            <input type="submit" value="Apply" />
+                        </form>
+                    </div>
                     <div class="filter-area">
-                      <form onsubmit="filterDataSalesByYearBuilt(event)">
-                        <label for="year-built-from">From Year Built: </label>
-              <input
-                type="number"
-                id="year-built-from"
-                name="year-built-from"
-                min="1111"
-                max="2017"
-              />
-              <label for="year-built-to">To Year Built: </label>
-              <input
-                type="number"
-                id="year-built-to"
-                name="year-built-to"
-                min="1111"
-                max="2017"
-              />
-              <input type="submit" value="Apply" />
-            </form>
-          </div>
-          <div class="filter-area">
-             <form onsubmit="sortDataSalesByYearBuilt(event)">
-             <label for="year-built-sort-by">Sort By: </label>
-             <select id="year-built-sort-by" name="year-built-sort-by">
-              <option value="yearBuilt" selected>Year Built</option>
-              <option value="salePrice">Total Sales</option>
-             </select>
-             <label for="year-built-order-by">Order By: </label>
-             <select id="year-built-order-by" name="year-built-order-by">
-              <option value="asc" selected>Ascending</option>
-               <option value="desc">Descending</option>
-               </select>
-               <input type="submit" value="Apply" />
-               </form>
-             </div>
-            <div class="linechartprop">
-             <canvas id= "propertySalesByYearBuiltChart"></canvas>
+                        <form onsubmit="sortDataSalesByYearBuilt(event)">
+                            <label for="year-built-sort-by">Sort By: </label>
+                            <select id="year-built-sort-by" name="year-built-sort-by">
+                                <option value="yearBuilt" selected>Year Built</option>
+                                <option value="salePrice">Total Sales</option>
+                            </select>
+                        
+                            <label for="year-built-order-by">Order By: </label>
+                            <select id="year-built-order-by" name="year-built-order-by">
+                                <option value="asc" selected>Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                            <input type="submit" value="Apply" />
+                        </form>
+                    </div>
+                    <div class="linechartprop">
+                        <canvas id= "propertySalesByYearBuiltChart"></canvas>
                     </div> 
-                    <script src="js/yearbuilt.js"></script>    
+                        <script src="js/yearbuilt.js"></script>    
                 </div>
             </div>
         </main>
