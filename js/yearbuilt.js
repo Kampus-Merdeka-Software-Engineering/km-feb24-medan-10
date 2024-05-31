@@ -1,6 +1,7 @@
 let sortedLabels = [];
 let sortedData = [];
 
+//Variable untuk menampung chart dan data yang ditampilkan oleh chart
 var chartSalesByYearBuilt = null;
 var dataSalesByYearBuilt = [];
 
@@ -11,18 +12,9 @@ fetch("json/nycPropSales.json")
     const arrSalesByYearBuilt = [];
 
     data.forEach((property) => {
-    const yearBuilt = property.YEAR_BUILT;
-    const salePrice = parseFloat(property.SALE_PRICE || 0);
+      const yearBuilt = property.YEAR_BUILT;
+      const salePrice = parseFloat(property.SALE_PRICE || 0);
 
-<<<<<<< HEAD
-        if(salePrice > 0){
-            if (!salesByYearBuilt[yearBuilt]) {
-                salesByYearBuilt[yearBuilt] = 1;
-            } else {
-                salesByYearBuilt[yearBuilt] += 1;
-            }
-        } 
-=======
       if (!salesByYearBuilt[yearBuilt]) {
         salesByYearBuilt[yearBuilt] = salePrice;
         dataSalesByYearBuilt.push({
@@ -36,9 +28,9 @@ fetch("json/nycPropSales.json")
         );
         dataSalesByYearBuilt[index].salePrice += salePrice;
       }
->>>>>>> abea5380f1738de327c4bfc09bfcbbf6a99a57df
     });
-          dataSalesByYearBuilt.sort((a, b) => b.yearBuilt - a.yearBuilt);
+
+    dataSalesByYearBuilt.sort((a, b) => b.yearBuilt - a.yearBuilt);
 
     sortedLabels = Object.keys(salesByYearBuilt);
     sortedData = Object.values(salesByYearBuilt);
@@ -50,23 +42,7 @@ fetch("json/nycPropSales.json")
   });
 
 function createChart(labels, data) {
-<<<<<<< HEAD
-    const ctx = document.getElementById('propertySalesByYearBuiltChart').getContext('2d');
-    ctx.canvas.height = 255;
-
-    const propertySalesByYearBuiltChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Total Property Sales',
-                data: data,
-                backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-=======
- const ctx = document
+  const ctx = document
     .getElementById("propertySalesByYearBuiltChart")
     .getContext("2d");
   const propertySalesByYearBuiltChart = new Chart(ctx, {
@@ -80,13 +56,10 @@ function createChart(labels, data) {
           backgroundColor: "rgba(75, 192, 192, 0.5)",
           borderColor: "rgba(75, 192, 192, 1)",
           borderWidth: 1,
->>>>>>> abea5380f1738de327c4bfc09bfcbbf6a99a57df
         },
       ],
     },
     options: {
-            responsive: true,
-            maintainAspectRatio: false,
       indexAxis: "y", // Mengatur orientasi sumbu x menjadi sumbu y
       scales: {
         y: {
@@ -105,8 +78,10 @@ function createChart(labels, data) {
       },
     },
   });
-    window.chartSalesByYearBuilt = propertySalesByYearBuiltChart;
-    
+  //dimasukkan chartnya ke dalam variable penampung global
+  window.chartSalesByYearBuilt = propertySalesByYearBuiltChart;
+}
+
 function sortData(order) {
   if (order === "asc") {
     sortedLabels.sort();
@@ -184,4 +159,3 @@ function sortDataSalesByYearBuilt(e) {
   chartSalesByYearBuilt.data.datasets[0].data = data;
   chartSalesByYearBuilt.update();
 }
-    
