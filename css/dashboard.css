@@ -412,25 +412,10 @@ table th {
         row-gap: 10px;
     }
 
-    /* .tabelrec{
-        grid-column: auto;
-    }
-
-    .linetotal {
-        grid-column: span 2;
-    }
-
-    .totalavg,
-    .totalprop {
-        grid-column: auto auto;
-    } */
-
     /* ----------  Chart Detail ---------- */
     .scoretotal, .scoreprop {
-        display: inline-flex;
-        max-width: 150px;
         padding: 0px;
-        margin: 0;
+        margin-left: 8px;
         align-items: center;
     }
 
@@ -440,20 +425,36 @@ table th {
     }
     
     .tabel {
-        max-width: 200px;
+        grid-column: span 4;
+        grid-row: span 2;
+        max-width: 400px;
         padding: 0px;
         margin: 0;
     }
 
-    .piechart1, .piechart2{
-        gap: 10px;
-        /* grid-column: span 1; */
+    #data-tabel {
+        max-width: 600px;
     }
 
-    /* #piechart-avg, #pie-total-property-sales{
-        max-height: 200px;
-        max-width: 200px;
-    } */
+    .piechart1, .piechart2{
+        grid-column: span 4;
+        grid-row: span 2;
+        gap: 10px;
+    }
+
+    .linetotal, .totalavg, .totalprop {
+        padding-right: 20px;
+    }
+
+    /* Footer */
+    .footertitle {
+        padding: 27px 0 10px 0;
+        margin-left: 60px;
+        text-align: center;
+        font-size: 12px;
+        color: black;
+    }
+    
 }
 
 /*-------- mobile tablet ------*/
