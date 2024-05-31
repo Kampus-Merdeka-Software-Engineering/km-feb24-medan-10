@@ -604,7 +604,13 @@ table th {
     #propertySalesByYearBuiltChart {
         max-width: 100%;
     }
-
+    
+.totalprop .filter-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+    
     /* -------------- Footer --------------- */
     .footertitle {
         padding: 20px 10px 5px;
