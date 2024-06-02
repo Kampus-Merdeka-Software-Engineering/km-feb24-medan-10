@@ -274,6 +274,11 @@ table th {
     background-color:#4B93FF;
     color: #FFE713;
     font-size: 15px;
+    overflow: hidden;
+}
+
+table td{
+    overflow: hidden;
 }
 
 .piechart1, .piechart2 {
