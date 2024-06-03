@@ -492,7 +492,7 @@ table td{
         gap: 85px;
     }
 
-    .account-icon{
+    .account-icon {
         width: 40px;
     }
 
@@ -501,18 +501,20 @@ table td{
         gap: 28px;
     }
 
-    .dashboard-icon, .addData-icon, .feedback-icon{
+    .dashboard-icon,
+    .addData-icon,
+    .feedback-icon {
         padding-top: 5px;
         justify-content: center;
         margin-left: 40px;
-        width: 27px; 
+        width: 27px;
     }
 
-    .logOut-icon{
+    .logOut-icon {
         width: 20px;
     }
 
-    .logOut-menu{
+    .logOut-menu {
         padding-top: 0px;
         padding-left: 320px;
         font-weight: 3000;
@@ -522,8 +524,8 @@ table td{
 
     /* --------- Header and Filter button --------- */
     header {
-        padding: 70px 0px 35px 20px; 
-        gap: 30px; 
+        padding: 70px 0 35px 20px;
+        gap: 30px;
         margin-left: 100px;
         justify-content: center;
     }
@@ -538,30 +540,31 @@ table td{
         align-items: center;
     }
 
-    .dropbtn-borough{
+    .dropbtn-borough {
         padding: 5px 15px;
         font-size: 13px;
     }
 
-    .dropbtn-month{
+    .dropbtn-month {
         padding: 5px 10px;
         font-size: 13px;
     }
 
-    .borough-filter, .month-filter {
+    .borough-filter,
+    .month-filter {
         margin-bottom: 15px;
-        
     }
 
     /* --------------------- Main Content ------------------------ */
     main {
-        padding: 0 15px; 
+        padding: 0 15px;
     }
 
     .grid-container {
-       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        row-gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
     }
+
     .tabel {
         grid-column: span 4;
         grid-row: span 2;
@@ -590,9 +593,8 @@ table td{
     #data-tabel {
         font-size: 15px;
     }
-    
 
-    /* ----------  Chart Detail ---------- */
+    /* ---------- Chart Detail ---------- */
     .piechart-container {
         display: flex;
         flex-direction: column;
@@ -624,7 +626,7 @@ table td{
     #propertySalesByYearBuiltChart {
         max-width: 100%;
     }
-    
+
     /* -------------- Footer --------------- */
     .footertitle {
         padding: 20px 10px 5px;
@@ -633,3 +635,5 @@ table td{
         color: black;
     }
 }
+
+
