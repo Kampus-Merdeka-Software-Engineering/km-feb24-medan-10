@@ -363,7 +363,7 @@ table td{
 
     .logOut-menu{
         padding-top: 0px;
-        padding-left: 40px;
+        padding-left: 12px;
         font-weight: 300;
         font-size: 9px;
         gap: 5px;
@@ -419,7 +419,8 @@ table td{
 
     /* --------------------- Main Content ------------------------ */
     main {
-        padding: 0px 5px 0px 20px; 
+        padding: 0px 5px 0px 20px;
+        margin-left: 10px; 
     }
 
     .titles {
@@ -434,6 +435,7 @@ table td{
 
     /* ----------  Chart Detail ---------- */
     .scoretotal, .scoreprop {
+        max-width: 150px;
         padding: 0px;
         margin-left: 8px;
         align-items: center;
@@ -447,7 +449,7 @@ table td{
     .tabel {
         grid-column: span 4;
         grid-row: span 2;
-        max-width: 400px;
+        max-width: 320px;
         padding: 0px;
         margin: 0;
     }
@@ -469,7 +471,7 @@ table td{
     /* Footer */
     .footertitle {
         padding: 27px 0 10px 0;
-        margin-left: 60px;
+        margin-left: 20px;
         text-align: center;
         font-size: 12px;
         color: black;
