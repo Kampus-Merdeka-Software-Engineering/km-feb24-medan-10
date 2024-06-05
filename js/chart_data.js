@@ -100,11 +100,27 @@ fetch('json/nycPropSales.json')
             responsive: true,
             maintainAspectRatio: false,
             scales: {
+                x: {
+                    ticks: { 
+                        callback: function(value){
+                            let newLabel = this.getLabelForValue(value)
+                                .substring(0,8) + '...';
+                            return newLabel;
+                        }
+                    }
+                },
                 y: {
                     beginAtZero: true,
                     title: {
                         display: true,
                         text: 'Dollar ($)'
+                    },
+                    ticks: { 
+                        callback: function(value){
+                            let newLabel = this.getLabelForValue(value)
+                                .substring(0,8);
+                            return newLabel;
+                        }
                     }
                 }
             }

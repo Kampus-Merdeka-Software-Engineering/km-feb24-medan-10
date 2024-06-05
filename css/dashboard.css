@@ -401,12 +401,12 @@ table td{
     }
 
     /* ----------  Chart Detail ---------- */
-    .scoretotal, .scoreprop {
+    /* .scoretotal, .scoreprop {
         max-width: 150px;
         padding: 0px;
         margin-left: 8px;
         align-items: center;
-    }
+    } */
 
     #total-sale-price, #total-property {
         max-width: 100px;
