@@ -67,61 +67,35 @@
             <div class="logo">
                 <div>NYC <span>PROPERTY</span> SALES</div>
             </div>
-
-            <div class="filter-button">
-                <div class="borough-filter">
-                    <button class="dropbtn-borough">Borough <img src="assets/dorpdown arrow.png"/></button>
-                    <div class="borough-dropdwn-content">
-                        <a href="#" data-id="1">Manhattan</a>
-                        <a href="#" data-id="2">Bronx</a>
-                        <a href="#" data-id="3">Brooklyn</a>
-                        <a href="#" data-id="4">Queens</a>
-                        <a href="#" data-id="5">Staten Island</a>
-                    </div>   
-                </div> 
-
-                <div class="month-filter">
-                    <button id = "dropbtn-month" class="dropbtn-month">
-                        Month 
-                        <img src="assets/dorpdown arrow.png" />
-                    </button>
-                    
-                    <div class="month-dropdwn-content">
-                        <a href="#" onclick="getTotalPropertyByMonth(1, 'Jan')">Jan</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(2, 'Feb')">Feb</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(3, 'Mar')">Mar</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(4, 'Apr')">Apr</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(5, 'May')">May</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(6, 'Jun')">Jun</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(7, 'Jul')">Jul</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(8, 'Aug')">Aug</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(9, 'Sep')">Sep</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(10, 'Oct')">Oct</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(11, 'Nov')">Nov</a>
-                        <a href="#" onclick="getTotalPropertyByMonth(12, 'Dec')">Dec</a>
-                    </div>
-                </div>
-            </div>
         </header>
         
         <main>
+            <div class="borough-filter">
+                <button class="dropbtn-borough">Borough <img src="assets/dorpdown arrow.png"/></button>
+                <div class="borough-dropdwn-content">
+                    <a href="#" data-id="1">Manhattan</a>
+                    <a href="#" data-id="2">Bronx</a>
+                    <a href="#" data-id="3">Brooklyn</a>
+                    <a href="#" data-id="4">Queens</a>
+                    <a href="#" data-id="5">Staten Island</a>
+                </div>   
+            </div>
             <div class="grid-container">
-                <div class="scorecode1">
-                    <div class="titles">Total Sales Price</div>
-                    <div class="scoretotal">
-                        <p id="total-sale-price"></p>
-                        <script src="js/sale.js"></script>
+                    <div class="score-card1">
+                        <div class="titles">Total Sales Price</div>
+                        <div class="scoretotal">
+                            <p id="total-sale-price"></p>
+                            <script src="js/sale.js"></script>
+                        </div>
                     </div>
-                </div>
 
-                <div class="scorecode2">
-                    <div class="titles">Total Building/Property</div>
-                    <div class="scoreprop">
-                        <p id="total-property"></p>
-                        <script src="js/bulding.js"></script> 
+                    <div class="score-card1">
+                        <div class="titles">Total Building/Property</div>
+                        <div class="scoreprop">
+                            <p id="total-property"></p>
+                            <script src="js/bulding.js"></script> 
+                        </div>
                     </div>
-                </div>
-
                 <div class="tabel">
                     <div class="tabelrec">
                         <table id="data-tabel">

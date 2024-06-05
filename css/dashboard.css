@@ -70,12 +70,10 @@ ul {
 
 /* --------- Header and Filter button --------- */
 header{
-    padding: 30px 0px 20px 150px;
+    padding: 30px 0px 30px 150px;
     display:flex;
-    flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    gap: 650px;
 }
 
 .logo {
@@ -86,87 +84,6 @@ header{
 
 .logo span{
     color: #FFE713;
-}
-
-.filter-button{
-    display: flex;
-    align-items: center;
-    gap: 24px ;
-}
-
-.borough-filter,
-.month-filter{
-    display: inline-block;
-}
-
-.dropbtn-borough{
-    padding: 6px 18px;
-    font-weight: 500;
-    font-size: 12px;
-    color: #6b6b6b;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-}
-
-.dropbtn-borough img,
-.dropbtn-month img{
-    margin-left: 5px;
-}
-
-.dropbtn-month{
-    padding: 6px 22px;
-    font-weight: 500;
-    font-size: 12px;
-    color: #6b6b6b;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-}
-
-.borough-dropdwn-content{
-    display: none;
-    position: absolute;
-    font-weight: 400;
-    font-size: 11px;
-    background-color: #f1f1f1;
-    width: 130px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.month-dropdwn-content{
-    display: none;
-    position: absolute;
-    font-weight: 400;
-    font-size: 11px;
-    background-color: #f1f1f1;
-    width: 60px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.borough-dropdwn-content a,
-.month-dropdwn-content a{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.borough-dropdwn-content a:hover,
-.month-dropdwn-content a:hover {
-    background-color: #ddd;
-}
-
-.borough-filter:hover .borough-dropdwn-content,
-.month-filter:hover .month-dropdwn-content{
-    display: block;
-}
-
-.borough-filter:hover .dropbtn-borough,
-.month-filter:hover .dropbtn-month {
-    background-color: #9ac1f886;
 }
 
 /* --------------------- Main Content ------------------------ */
@@ -194,16 +111,6 @@ main {
     grid-row: span 3;
 }
 
-.tabel_header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: left;
-    color: #109BFF;
-    padding-bottom: 3px;
-}
-
 .linetotal {
     grid-column: span 4;
     padding-top: 40px;
@@ -216,8 +123,56 @@ main {
 
 /* ----------  Chart Detail ---------- */
 
-.scorecode1,
-.scorecode2 {
+.borough-filter{
+    display: inline-block;
+}
+
+.dropbtn-borough{
+    padding: 6px 18px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #807f7f;
+    background-color: #ebebeb;
+    border: none;
+    border-radius: 5px;
+}
+
+.dropbtn-borough img{
+    margin-left: 5px;
+}
+
+.borough-dropdwn-content{
+    display: none;
+    position: absolute;
+    font-weight: 400;
+    font-size: 11px;
+    background-color: #f1f1f1;
+    width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.borough-dropdwn-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.borough-dropdwn-content a:hover{
+    background-color: #ddd;
+}
+
+.borough-filter:hover .borough-dropdwn-content{
+    display: block;
+}
+
+.borough-filter:hover .dropbtn-borough{
+    background-color: #9ac1f886;
+}
+
+.score-card1,
+.score-card2 {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -266,7 +221,17 @@ table.dataTable th.dt-type-numeric,table.dataTable td.dt-type-numeric{
 }
 table.dataTable th.dt-type-date,table.dataTable td.dt-type-date{
     text-align: center;
-}  */ 
+} */
+
+/* .tabel_header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    color: #109BFF;
+    padding-bottom: 3px;
+} */
 
 table th {
     position: sticky;
@@ -279,6 +244,7 @@ table th {
 
 table td{
     overflow: hidden;
+    word-wrap:break-word;
 }
 
 .piechart1, .piechart2 {
@@ -552,8 +518,7 @@ table td{
         font-size: 13px;
     }
 
-    .borough-filter,
-    .month-filter {
+    .borough-filter{
         margin-bottom: 15px;
     }
 

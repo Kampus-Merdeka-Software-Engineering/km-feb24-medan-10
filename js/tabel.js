@@ -4,9 +4,17 @@ fetch('json/forTable.json')
     })
     .then((data) => {
         window.propertyData = data;
-        // console.log(window.propertyData);
         let table = new DataTable('#data-tabel', {
             data : window.propertyData,
+            scrollCollapse: true,
+            scrollY: '600px',
+            columnDefs: [{targets: 0,
+                defaultContent: "",
+                width: "150px" 
+            },],
+            pageLength:"15",
+            lengthMenu: [15, 20, 50, 100],
+            deferLoading: "coutnt", 
             columns : [
                 { data: 'BOROUGH' },
                 { data: 'NEIGHBORHOOD' },
