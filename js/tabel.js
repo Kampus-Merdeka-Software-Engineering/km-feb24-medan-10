@@ -6,15 +6,9 @@ fetch('json/forTable.json')
         window.propertyData = data;
         let table = new DataTable('#data-tabel', {
             data : window.propertyData,
-            scrollCollapse: true,
-            scrollY: '600px',
-            columnDefs: [{targets: 0,
-                defaultContent: "",
-                width: "150px" 
-            },],
-            pageLength:"15",
-            lengthMenu: [15, 20, 50, 100],
-            deferLoading: "coutnt", 
+            scrollX: true,
+            scrollY: 600,
+            lengthMenu: [[15, 20, 50, 100],[15, 20, 50, 100]],
             columns : [
                 { data: 'BOROUGH' },
                 { data: 'NEIGHBORHOOD' },
