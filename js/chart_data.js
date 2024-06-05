@@ -117,8 +117,12 @@ fetch('json/nycPropSales.json')
                     },
                     ticks: { 
                         callback: function(value){
-                            let newLabel = this.getLabelForValue(value)
-                                .substring(0,8);
+                            let newLabel = value.toLocaleString('en-US', {
+                                maximumFractionDigits: 2,
+                                notation: 'compact',
+                                compactDisplay: 'short'
+                              });
+                            
                             return newLabel;
                         }
                     }
