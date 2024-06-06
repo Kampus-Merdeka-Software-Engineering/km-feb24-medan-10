@@ -26,13 +26,3 @@ document.querySelectorAll('.borough-dropdwn-content a').forEach(button => {
         document.getElementById('total-sale-price').innerText = totalBoroughSalePrice.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
     });
 });
-
-// Tambahkan fungsi perbulan
-function getTotalPropertyByMonth(id, monthName) {
-    document.getElementById('dropbtn-month').innerText = monthName;
-    var arrayFiltered = window.propertyData.filter((property) => {
-        var saleDate = new Date(property.SALE_DATE);
-        return saleDate.getMonth() + 1 === id;
-    });
-  
-}
