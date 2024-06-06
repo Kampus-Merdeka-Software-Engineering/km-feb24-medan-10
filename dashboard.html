@@ -131,11 +131,20 @@
 
                 <div class="linetotal">
                     <div class="titles">Total Property Sales in Each Borough</div>
+                    <div class="total-prop-filter-area">
+                        <label for="yearSelect">Select Year:</label>
+                        <select id="yearSelect" onchange="updateChartByYear()">
+                            <option value="all">All Years</option>
+                            <!-- Tahun akan ditambahkan secara dinamis oleh JavaScript -->
+                        </select>
+                    </div>
                     <div class="linechartotal">
                         <canvas id="propertySalesChart"></canvas>
                     </div>
-                    <script src="js/total.js"  type="text/javascript"></script>
+                    <script src="js/total.js" type="text/javascript"></script>
                 </div>
+                
+                
 
                 <div class="totalavg">
                     <div class="titles">Total Sales Vs Avg Sales Price Per Building Class Category</div>

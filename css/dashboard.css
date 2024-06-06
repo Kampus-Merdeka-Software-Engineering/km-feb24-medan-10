@@ -270,6 +270,15 @@ table td{
     background-color: #c0bebe2c;
 }
 
+.total-prop-filter-area{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px auto;
+    font-size: 12px;
+    font-weight: 00;
+}
+
 .total-avg-filter-area{
     display: flex;
     justify-content: center;
