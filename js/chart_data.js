@@ -1,19 +1,39 @@
-let sortedLabelsTotal = [];
-let sortedDataTotal = [];
-let sortedLabelsAvg = [];
-let sortedDataAvg= [];
-
-
-let chartTotalUpdate = null;
-let chartAvgUpdate = null;
 let dataTotal = [];
 let dataAvg = [];
+let salesVsAvgPriceChart = null;
 
+function updateChart(labels, totalSalesData, avgPriceData) {
+    // Perbarui data grafik
+    salesVsAvgPriceChart.data.labels = labels;
+    salesVsAvgPriceChart.data.datasets[0].data = totalSalesData;
+    salesVsAvgPriceChart.data.datasets[1].data = avgPriceData;
+
+    // Perbarui grafik
+    salesVsAvgPriceChart.update();
+}
+
+function sortDataTotalVsAvgSales(sortBy, orderBy) {
+    let sortedData = [];
+    if (sortBy === "totalSales") {
+        sortedData = dataTotal.slice().sort((a, b) => {
+            return orderBy === "asc" ? a.totalSales - b.totalSales : b.totalSales - a.totalSales;
+        });
+    } else if (sortBy === "avgSales") {
+        sortedData = dataAvg.slice().sort((a, b) => {
+            return orderBy === "asc" ? a.avgPrice - b.avgPrice : b.avgPrice - a.avgPrice;
+        });
+    }
+
+    const labels = sortedData.map(item => item.buildingClass);
+    const totalSalesData = sortedData.map(item => item.totalSales || 0);
+    const avgPriceData = sortedData.map(item => item.avgPrice || 0);
+
+    updateChart(labels, totalSalesData, avgPriceData);
+}
 
 fetch('json/nycPropSales.json')
 .then((response) => response.json())
 .then((data) => {
-    // Proses data
     const salesByBuildingClass = {};
     const avgPriceByBuildingClass = {};
 
@@ -21,64 +41,41 @@ fetch('json/nycPropSales.json')
         const buildingClass = property.BUILDING_CLASS_CATEGORY;
         const salePrice = parseFloat(property.SALE_PRICE || 0);
 
-        // Total Sales by Building Class
         if (salePrice > 0) {
             if (!salesByBuildingClass[buildingClass]) {
                 salesByBuildingClass[buildingClass] = 1;
                 dataTotal.push({
-                    buildingClass:buildingClass,
+                    buildingClass: buildingClass,
                     totalSales: 1,
-                })
+                });
             } else {
                 salesByBuildingClass[buildingClass] += 1;
                 let index = dataTotal.findIndex(
                     (item) => item.buildingClass === buildingClass
                 );
-                dataTotal[index].totalSales +=1;
+                dataTotal[index].totalSales += 1;
             }
         }
-         
-        // Avg Sales Price by Building Class
-        if (!avgPriceByBuildingClass[buildingClass]) {
-            avgPriceByBuildingClass[buildingClass] = [salePrice, 1]; // [totalPrice, count]
 
+        if (!avgPriceByBuildingClass[buildingClass]) {
+            avgPriceByBuildingClass[buildingClass] = [salePrice, 1];
         } else {
             avgPriceByBuildingClass[buildingClass][0] += salePrice;
             avgPriceByBuildingClass[buildingClass][1] += 1;
         }
     });
 
-    // Hitung rata-rata harga jual
     Object.keys(avgPriceByBuildingClass).forEach((buildingClass) => {
         const [totalPrice, count] = avgPriceByBuildingClass[buildingClass];
         avgPriceByBuildingClass[buildingClass] = totalPrice / count;
     });
 
-    // Sort data berdasarkan total sales dan average sales
-    dataTotal.sort((a,b)=> b.totalSales - a.totalSales);
     
-    dataAvg = Object.keys(avgPriceByBuildingClass).map((buildingClass) => ({
-        buildingClass: buildingClass,
-        avgPrice: avgPriceByBuildingClass[buildingClass]
-    }));
-    dataAvg.sort((a, b) => b.avgPrice - a.avgPrice);
 
-    sortedLabelsTotal = Object.keys(dataTotal);
-    sortedDataTotal = Object.values(dataTotal);
-
-    sortedLabelsAvg = Object.keys(dataAvg);
-    sortedDataAvg = Object.keys(dataAvg);
-
-    // Siapkan data untuk grafik
-    const labels = Object.keys(salesByBuildingClass);
-    const totalSalesData = Object.values(salesByBuildingClass);
-    const avgPriceData = Object.values(avgPriceByBuildingClass);
-
-    // Buat grafik menggunakan Chart.js
     const ctx = document.getElementById('salesVsAvgPriceChart').getContext('2d');
     ctx.canvas.height = 400;
 
-    const salesVsAvgPriceChart = new Chart(ctx, {
+    salesVsAvgPriceChart = new Chart(ctx, {
         type: 'line', // Ubah menjadi line chart
         data: {
             labels: labels,
@@ -133,4 +130,15 @@ fetch('json/nycPropSales.json')
 })
 .catch((error) => {
     console.error('Error fetching the property data:', error);
+});
+
+const filterForm = document.getElementById('filterForm');
+
+filterForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const sortBy = document.getElementById('total-avg-sort-by').value;
+    const orderBy = document.getElementById('total-avg-order-by').value;
+
+    sortDataTotalVsAvgSales(sortBy, orderBy);
 });
