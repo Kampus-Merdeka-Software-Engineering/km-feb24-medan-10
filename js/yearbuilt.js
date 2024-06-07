@@ -84,6 +84,7 @@ function createChart(labels, data) {
       },
     },
   });
+  
   //dimasukkan chartnya ke dalam variable penampung global
   window.chartSalesByYearBuilt = propertySalesByYearBuiltChart;
 }
