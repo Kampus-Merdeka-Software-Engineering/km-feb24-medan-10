@@ -69,11 +69,15 @@ fetch('json/nycPropSales.json')
         const [totalPrice, count] = avgPriceByBuildingClass[buildingClass];
         avgPriceByBuildingClass[buildingClass] = totalPrice / count;
     });
+        dataAvg.sort((a, b) => b.avgPrice - a.avgPrice);
 
-    
+    const labels = dataTotal.map(item => item.buildingClass);
+    const totalSalesData = dataTotal.map(item => item.totalSales);
+    const avgPriceData = dataAvg.map(item => item.avgPrice);
 
     const ctx = document.getElementById('salesVsAvgPriceChart').getContext('2d');
     ctx.canvas.height = 400;
+
 
     salesVsAvgPriceChart = new Chart(ctx, {
         type: 'line', // Ubah menjadi line chart
