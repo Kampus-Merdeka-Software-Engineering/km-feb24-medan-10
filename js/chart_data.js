@@ -69,7 +69,14 @@ fetch('json/nycPropSales.json')
         const [totalPrice, count] = avgPriceByBuildingClass[buildingClass];
         avgPriceByBuildingClass[buildingClass] = totalPrice / count;
     });
-        dataAvg.sort((a, b) => b.avgPrice - a.avgPrice);
+
+    dataTotal.sort((a, b) => b.totalSales - a.totalSales);
+
+    dataAvg = Object.keys(avgPriceByBuildingClass).map((buildingClass) => ({
+        buildingClass: buildingClass,
+        avgPrice: avgPriceByBuildingClass[buildingClass],
+    }));
+    dataAvg.sort((a, b) => b.avgPrice - a.avgPrice);
 
     const labels = dataTotal.map(item => item.buildingClass);
     const totalSalesData = dataTotal.map(item => item.totalSales);
@@ -77,7 +84,6 @@ fetch('json/nycPropSales.json')
 
     const ctx = document.getElementById('salesVsAvgPriceChart').getContext('2d');
     ctx.canvas.height = 400;
-
 
     salesVsAvgPriceChart = new Chart(ctx, {
         type: 'line', // Ubah menjadi line chart
@@ -135,6 +141,7 @@ fetch('json/nycPropSales.json')
 .catch((error) => {
     console.error('Error fetching the property data:', error);
 });
+
 
 const filterForm = document.getElementById('filterForm');
 
