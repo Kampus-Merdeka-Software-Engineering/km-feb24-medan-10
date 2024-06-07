@@ -6,6 +6,8 @@ fetch('json/forTable.json')
         window.propertyData = data;
         let table = new DataTable('#data-tabel', {
             data : window.propertyData,
+            responsive: true,
+            maintainAspectRatio: false,
             scrollX: true,
             scrollY: 600,
             lengthMenu: [[15, 20, 50, 100],[15, 20, 50, 100]],
