@@ -273,10 +273,21 @@ table td{
 .total-prop-filter-area{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     margin: 10px auto;
     font-size: 12px;
     font-weight: 00;
+}
+
+#yearSelect {
+    padding: 6px 18px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #3f3f3f;
+    background-color: #ebebeb;
+    border: none;
+    border-radius: 5px;
 }
 
 .total-avg-filter-area{
