@@ -124,7 +124,7 @@ main {
 
 /* ----------  Chart Detail ---------- */
 
-.borough-filter{
+/* .borough-filter{
     display: inline-block;
 }
 
@@ -170,7 +170,7 @@ main {
 
 .borough-filter:hover .dropbtn-borough{
     background-color: #9ac1f886;
-}
+} */
 
 .score-card1,
 .score-card2 {
