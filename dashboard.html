@@ -71,7 +71,7 @@
         
         <main>
             <div class="borough-filter">
-                <select id="boroughSelect">
+                <select id="boroughSelect" onchange="scoreCardUpdate()">
                     <option value="all" selected>All</option>
                     <option value="1">Manhattan</option>
                     <option value="2">Bronx</option>
@@ -144,8 +144,6 @@
                     </div>
                     <script src="js/total.js" type="text/javascript"></script>
                 </div>
-                
-                
 
                 <div class="totalavg">
                     <div class="titles">Total Sales Vs Avg Sales Price Per Building Class Category</div>

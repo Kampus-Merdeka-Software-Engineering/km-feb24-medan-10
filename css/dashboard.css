@@ -124,11 +124,11 @@ main {
 
 /* ----------  Chart Detail ---------- */
 
-/* .borough-filter{
-    display: inline-block;
+.borough-filter{
+    margin-left: 11%;
 }
 
-.dropbtn-borough{
+/*.dropbtn-borough{
     padding: 6px 18px;
     font-weight: 500;
     font-size: 12px;

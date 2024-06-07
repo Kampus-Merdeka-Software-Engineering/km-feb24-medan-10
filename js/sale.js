@@ -1,34 +1,37 @@
 fetch('json/nycPropSales.json')
-    .then((response) => {
+   .then((response) => {
         // Konversi teks menjadi objek JSON
         return response.json();
     })
-    .then((data) => {
+   .then((data) => {
         window.propertyData = data;
         
         // Hitung total harga jual
-        const totalSalePrice = data.reduce((sum, property) => sum + parseFloat(property.SALE_PRICE || 0), 0);
-        document.getElementById('total-sale-price').innerText = totalSalePrice.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
-        
-        // Tambahkan event listener setelah data dimuat
-        document.getElementById('boroughSelect').addEventListener('change', (event) => {
-            event.preventDefault();
-            var selectElement = event.target;
-            var id = selectElement.value; // Mengambil nilai seleksi borough
+        // const totalSalePrice = data.reduce((sum, property) => sum + parseFloat(property.SALE_PRICE || 0), 0);
+        // document.getElementById('total-sale-price').innerText = totalSalePrice.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 
-            var arrayFiltered;
-
-            if (id === 'all') {
-                arrayFiltered = window.propertyData; // Jika semua borough, maka tidak perlu filter
-            } else {
-                arrayFiltered = window.propertyData.filter(property => property.BOROUGH_ID == id);
-            }
-
-            // Hitung total harga jual untuk borough yang dipilih
-            const totalBoroughSalePrice = arrayFiltered.reduce((sum, property) => sum + parseFloat(property.SALE_PRICE || 0), 0);
-            document.getElementById('total-sale-price').innerText = totalBoroughSalePrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-        });
+        scoreCardUpdate(); // Panggil fungsi scoreCardUpdate setelah data dimuat
     })
-    .catch((error) => {
+   .catch((error) => {
         console.error('Error fetching the property data:', error);
     });
+
+function scoreCardUpdate(){
+    // Tambahkan event listener setelah data dimuat
+    var select = document.getElementById('boroughSelect');
+    var selectValue = select.options[select.selectedIndex].value; // Mengambil nilai seleksi borough
+    // var selectElement = select.options[select.selectedIndex].text;
+
+    var arrayFiltered;
+
+    if (selectValue === 'all') {
+        arrayFiltered = window.propertyData; // Jika semua borough, maka tidak perlu filter
+    } else {
+        arrayFiltered = window.propertyData.selectValue;
+        document.getElementById('total-sale-price').innerText = totalBoroughSalePrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    }
+
+    // Hitung total harga jual untuk borough yang dipilih
+    const totalBoroughSalePrice = arrayFiltered.reduce((sum, property) => sum + parseFloat(property.SALE_PRICE || 0), 0);
+    document.getElementById('total-sale-price').innerText = totalBoroughSalePrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+}
