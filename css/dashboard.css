@@ -128,7 +128,7 @@ main {
     margin-left: 11%;
 }
 
-/*.dropbtn-borough{
+.dropbtn-borough{
     padding: 6px 18px;
     font-weight: 500;
     font-size: 12px;
@@ -170,7 +170,7 @@ main {
 
 .borough-filter:hover .dropbtn-borough{
     background-color: #9ac1f886;
-} */
+}
 
 .score-card1,
 .score-card2 {
