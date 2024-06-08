@@ -597,3 +597,14 @@ table td{
 }
 
 
+@media (max-width: 767px) {
+    #data-tabel_wrapper > .dt-layout-row{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    #data-tabel_wrapper label[for="dt-length-0"]{
+        display: none;
+    }
+}
