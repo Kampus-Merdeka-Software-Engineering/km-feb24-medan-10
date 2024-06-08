@@ -128,22 +128,17 @@ main {
     margin-left: 11%;
 }
 
-/* .dropbtn-borough{
+.dropbtn-borough{
     padding: 6px 18px;
     font-weight: 500;
     font-size: 12px;
-    color: #807f7f;
-    background-color: #ebebeb;
+    color: #585858;
+    background-color: #dbdada;
     border: none;
     border-radius: 5px;
-} */
-
-/*.dropbtn-borough img{
-    margin-left: 5px;
 }
 
-.borough-dropdwn-content{
-    display: none;
+/* .dropbtn-borough option{
     position: absolute;
     font-weight: 400;
     font-size: 11px;
@@ -151,19 +146,18 @@ main {
     width: 130px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-}
+    border: none;
+} */
 
-.borough-dropdwn-content a{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.borough-dropdwn-content a:hover{
+.dropbtn-borough option:hover{
     background-color: #ddd;
 }
 
+/* .borough-dropdwn-content a:hover{
+    background-color: #ddd;
+} */
+
+/*
 .borough-filter:hover .borough-dropdwn-content{
     display: block;
 }
@@ -200,7 +194,6 @@ main {
 
 .tabelrec {
     padding: 10px;
-    min-height: 200px;
     background-color: white;
     overflow: auto;
 }
@@ -324,16 +317,16 @@ table td{
         width: 100%;
         height: auto;
         padding: 8px 15px;
-        position: fixed;
+        position: sticky;
     }
     
     .navbar {
         flex-direction: row;
-        gap: 85px;
+        gap: 188px;
     }
     
     .account-icon{
-        width: 33px;
+        width: 30px;
     }
 
     ul {
@@ -345,24 +338,12 @@ table td{
     .addData-icon,
     .feedback-icon{
         padding-top: 5px;
-        width: 22px;
-    }
-
-    .logOut-menu{
-        padding-top: 0px;
-        padding-left: 12px;
-        font-weight: 300;
-        font-size: 9px;
-        gap: 5px;
-    }
-
-    .logOut-icon{
-        width: 15px;
+        width: 20px;
     }
 
     /* --------- Header and Filter button --------- */
     header {
-        padding: 70px 0px 35px 20px; 
+        padding: 15px 0px 35px 20px; 
         gap: 35px; 
     }
 
@@ -370,48 +351,14 @@ table td{
         font-size: 14px;
     }
 
-    .filter-button {
-       gap: 10px;
-    }
-
-    .dropbtn-borough{
-        padding: 5px 10px;
-        font-size: 9px;
-    }
-
-    .dropbtn-month{
-        padding: 5px 15px;
-        font-size: 9px;
-    }
-
-    .dropbtn-borough img,
-    .dropbtn-month img{
-        width: 9px;
-    }
-
-    .borough-dropdwn-content{
-        font-size: 9px;
-        width: 109px;
-    }
-    
-    .month-dropdwn-content{
-        font-size: 9px;
-        width: 48px;
-    }
-    
-    .borough-dropdwn-content a,
-    .month-dropdwn-content a{
-        padding: 8px 16px;
-    }
 
     /* --------------------- Main Content ------------------------ */
     main {
-        padding: 0px 5px 0px 20px;
-        margin-left: 10px; 
+        padding: 0px 12px 0px 12px;
     }
 
     .titles {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .grid-container {
@@ -421,38 +368,63 @@ table td{
     }
 
     /* ----------  Chart Detail ---------- */
-    /* .scoretotal, .scoreprop {
-        max-width: 150px;
-        padding: 0px;
-        margin-left: 8px;
-        align-items: center;
-    } */
+    .borough-filter{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+    }
 
-    #total-sale-price, #total-property {
-        max-width: 100px;
+    .dropbtn-borough{
+        padding: 4px 11px;
+        font-size: 11px;
+    }
+    
+    .score-card1,
+    .score-card2 {
+        grid-column: span 2;
+        padding: 20px 0px 20px 0px;
+    } 
+
+    .scoretotal, .scoreprop {
+        max-width: 150px;
+        border-radius: 10px;
+    }
+
+    #total-sale-price, #total-property{
         font-size: 12px;
+        max-width: 120px;
     }
     
     .tabel {
         grid-column: span 4;
-        grid-row: span 2;
-        max-width: 320px;
+        max-width: 363px;
         padding: 0px;
         margin: 0;
     }
 
-    #data-tabel {
-        max-width: 600px;
+    .tabelrec {
+        padding: 5px;
+        /* max-height: 300px; */
+    }
+    
+
+    table th {
+        font-size: 13px;
+    }
+
+    #data-tabel{
+        font-size: 12px;
     }
 
     .piechart1, .piechart2{
         grid-column: span 4;
-        grid-row: span 2;
         gap: 10px;
     }
 
     .linetotal, .totalavg, .totalprop {
         padding-right: 20px;
+        grid-column: span 4;
     }
 
     /* Footer */
