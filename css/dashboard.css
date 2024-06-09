@@ -112,14 +112,11 @@ main {
     grid-row: span 3;
 }
 
-.linetotal {
+.linetotal,
+.totalavg, 
+.totalprop{
     grid-column: span 4;
-    padding-top: 40px;
-}
-
-.totalavg, .totalprop{
-    grid-column: span 4;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 /* ----------  Chart Detail ---------- */
@@ -132,8 +129,8 @@ main {
     padding: 6px 18px;
     font-weight: 500;
     font-size: 12px;
-    color: #585858;
-    background-color: #dbdada;
+    color: #3f3f3f;
+    background-color: #ebebeb;
     border: none;
     border-radius: 5px;
 }
@@ -149,21 +146,8 @@ main {
     border: none;
 } */
 
-.dropbtn-borough option:hover{
+/* .dropbtn-borough option:hover{
     background-color: #ddd;
-}
-
-/* .borough-dropdwn-content a:hover{
-    background-color: #ddd;
-} */
-
-/*
-.borough-filter:hover .borough-dropdwn-content{
-    display: block;
-}
-
-.borough-filter:hover .dropbtn-borough{
-    background-color: #9ac1f886;
 } */
 
 .score-card1,
@@ -180,9 +164,10 @@ main {
     align-items: center;
     padding: 10px;
     width: 180px;
-    height: 43px;
+    height: 50px;
     background-color: #0075c956;
-    border-radius: 9px;
+    border: none;
+    border-radius: 7px;
 }
 
 #total-sale-price, #total-property{
@@ -206,26 +191,6 @@ table{
 #data-tabel{
     font-size: 14px;
 }
-
-/* table.dataTable th.sorting_1,table.dataTable td.sorting_1{
-    text-align: right;
-}
-table.dataTable th.dt-type-numeric,table.dataTable td.dt-type-numeric{
-    text-align: center;
-}
-table.dataTable th.dt-type-date,table.dataTable td.dt-type-date{
-    text-align: center;
-} */
-
-/* .tabel_header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: left;
-    color: #109BFF;
-    padding-bottom: 3px;
-} */
 
 table th {
     position: sticky;
@@ -259,7 +224,8 @@ table td{
 }
 
 .linechartotal, .totalavgchart, .linechartprop {
-    padding: 10px;
+    margin: 20px 0px;
+    padding: 20px;
     background-color: #c0bebe2c;
 }
 
@@ -267,13 +233,46 @@ table td{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     margin: 10px auto;
     font-size: 12px;
-    font-weight: 00;
+    font-weight: 400;
+    gap:10px;
 }
 
-#yearSelect {
+.total-avg-filter-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    font-size: 12px;
+    font-weight: 400;   
+}
+
+#filterForm{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.total-property-yrbuild-filter-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.total-property-yrbuild-filter-area form{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+#yearSelect, 
+#total-avg-sort-by, 
+#total-avg-order-by,
+#year-built-sort-by,
+#year-built-order-by {
     padding: 6px 18px;
     font-weight: 500;
     font-size: 13px;
@@ -283,28 +282,30 @@ table td{
     border-radius: 5px;
 }
 
-.total-avg-filter-area{
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin: 20px auto;
-    font-size: 12px;
-    font-weight: 400;
+input[type="submit"],
+button[type="submit"]{
+    padding: 2px 6px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #3f3f3f;
+    background-color: #fff;
+    border: solid 1px black;
+    border-radius: 3px;
 }
 
-.totalprop .filter-area {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
+input[type="number"]{
+    padding: 3px 5px;
+    font-weight: 300;
+    font-size: 13px;
 }
 
-#propertySalesChart, #salesVsAvgPriceChart, #propertySalesByYearBuiltChart{
+/* #propertySalesChart, #salesVsAvgPriceChart, #propertySalesByYearBuiltChart{
     max-width: 100%;
-}
+} */
 
 /* -------------- Footer --------------- */
 .footertitle {
-    padding: 27px 45px 10px 150px;
+    padding: 30px 45px 10px 150px;
     text-align: center;
     font-size: 12px;
     color: black;
@@ -343,8 +344,7 @@ table td{
 
     /* --------- Header and Filter button --------- */
     header {
-        padding: 15px 0px 35px 20px; 
-        gap: 35px; 
+        padding: 20px 0px 30px 0px; 
     }
 
     .logo {
@@ -363,8 +363,9 @@ table td{
 
     .grid-container {
         display: grid;
-        grid-template-columns: auto; 
-        row-gap: 10px;
+        row-gap: 15px;
+        column-gap: 0;
+        justify-content: center;
     }
 
     /* ----------  Chart Detail ---------- */
@@ -398,7 +399,7 @@ table td{
     
     .tabel {
         grid-column: span 4;
-        max-width: 363px;
+        min-width: 363px;
         padding: 0px;
         margin: 0;
     }
@@ -417,6 +418,16 @@ table td{
         font-size: 12px;
     }
 
+    /* #data-tabel_wrapper > .dt-layout-row{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    #data-tabel_wrapper label[for="dt-length-0"]{
+        display: none;
+    } */
+
     .piechart1, .piechart2{
         grid-column: span 4;
         gap: 10px;
@@ -426,6 +437,68 @@ table td{
         padding-right: 20px;
         grid-column: span 4;
     }
+
+    .total-prop-filter-area,
+    .total-avg-filter-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+        font-size: 12px;
+        font-weight: 400;
+        gap: 10px;
+    }
+    
+    #filterForm{
+        display: flex;
+        align-items: center;
+        gap: 10px
+    }
+    
+    .total-property-yrbuild-filter-area {
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    
+    .total-property-yrbuild-filter-area form{
+        display: flex;
+        align-items: center;
+        gap: 10px
+    }
+    
+    #yearSelect, 
+    #total-avg-sort-by, 
+    #total-avg-order-by,
+    #year-built-sort-by,
+    #year-built-order-by {
+        padding: 6px 18px;
+        font-weight: 500;
+        font-size: 13px;
+        color: #3f3f3f;
+        background-color: #ebebeb;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    input[type="submit"],
+    button[type="submit"]{
+        padding: 2px 6px;
+        font-weight: 500;
+        font-size: 13px;
+        color: #3f3f3f;
+        background-color: #fff;
+        border: solid 1px black;
+        border-radius: 3px;
+    }
+    
+    input[type="number"]{
+        padding: 3px 5px;
+        font-weight: 300;
+        font-size: 13px;
+    }    
 
     /* Footer */
     .footertitle {

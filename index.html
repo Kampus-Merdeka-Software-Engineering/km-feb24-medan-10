@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NYC PROPERTY SALES</title>
+  
     <link rel="stylesheet" href="css/dashboard.css" />
 
     <!-- Font -->
@@ -15,9 +19,6 @@
     <!-- boxicons library -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NYC PROPERTY SALES</title>
-  
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -28,7 +29,12 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css"
     />
+    <!-- <link 
+        rel="stylesheet"
+        href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.dataTables.min.css"
+    /> -->
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <!-- <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.min.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -56,12 +62,6 @@
                             <img src="assets/feedback_icon.png" alt="Feedback Icon" class="feedback-icon"/>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="login.html" class="logOut-menu">
-                            <img src="assets/logOut_icon.png" alt="Log Out Icon" class="logOut-icon"/> 
-                            Log Out
-                        </a>
-                    </li> -->
                 </ul> 
             </div>
         </nav>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
         
-                <div class="score-card1">
+                <div class="score-card2">
                     <div class="titles">Total Building/Property</div>
                     <div class="scoreprop">
                         <p id="total-property"></p>
@@ -170,10 +170,9 @@
                     </div>
                 </div>
 
-
-                    <div class="totalprop">
+                <div class="totalprop">
                         <div class="titles">Total Property Sales Based On Year Build</div>
-                        <div class="filter-area">
+                    <div class="total-property-yrbuild-filter-area">
                         <form onsubmit="filterDataSalesByYearBuilt(event)">
                             <label for="year-built-from">From Year Built: </label>
                                 <input
@@ -194,7 +193,7 @@
                             <input type="submit" value="Apply" />
                         </form>
                     </div>
-                    <div class="filter-area">
+                    <div class="total-property-yrbuild-filter-area">
                         <form onsubmit="sortDataSalesByYearBuilt(event)">
                             <label for="year-built-sort-by">Sort By: </label>
                             <select id="year-built-sort-by" name="year-built-sort-by">
@@ -214,7 +213,8 @@
                         <canvas id= "propertySalesByYearBuiltChart"></canvas>
                     </div> 
                         <script src="js/yearbuilt.js"></script>    
-                </div>
+                    </div>
+                </div>  
             </div>
         </main>
 
