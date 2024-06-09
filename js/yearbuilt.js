@@ -8,45 +8,37 @@ var dataSalesByYearBuilt = [];
 fetch("json/nycPropSales.json")
   .then((response) => response.json())
   .then((data) => {
-    const salesByYearBuilt = {};
     const arrSalesByYearBuilt = [];
 
     data.forEach((property) => {
-      const yearBuilt = property.YEAR_BUILT;
-      const salePrice = parseFloat(property.SALE_PRICE || 0);
 
-      if(salePrice>0){
-        if (!salesByYearBuilt[yearBuilt]) {
-          salesByYearBuilt[yearBuilt] = 1;
-          dataSalesByYearBuilt.push({
-            yearBuilt: yearBuilt,
-            total: 1,
-          });
-        } else {
-          salesByYearBuilt[yearBuilt] += 1;
-          var index = dataSalesByYearBuilt.findIndex(
-            (item) => item.yearBuilt === yearBuilt
-          );
-          dataSalesByYearBuilt[index].total += 1;
-        }
+      if(arrSalesByYearBuilt.find((item) => item.yearBuilt === property.YEAR_BUILT)){
+        const index = arrSalesByYearBuilt.findIndex((item) => item. yearBuilt === property.YEAR_BUILT);
+        arrSalesByYearBuilt[index].total += 1;
+      }else{
+        arrSalesByYearBuilt.push({
+          yearBuilt: property.YEAR_BUILT,
+          total: 1,
+        });
       }
-      
     });
 
-    dataSalesByYearBuilt.sort((a, b) => b.yearBuilt - a.yearBuilt);
+    arrSalesByYearBuilt.sort((a, b) => b.yearBuilt - a.yearBuilt);
+    window.dataSalesByYearBuilt = arrSalesByYearBuilt;
 
-    sortedLabels = Object.keys(salesByYearBuilt);
-    sortedData = Object.values(salesByYearBuilt);
+    sortedLabels = arrSalesByYearBuilt.map((item)=> item.yearBuilt);
+    sortedData = arrSalesByYearBuilt.map((item)=> item.total);
 
     createChart(sortedLabels, sortedData);
   })
+
   .catch((error) => {
     console.error("Error fetching the property data:", error);
   });
 
 function createChart(labels, data) {
   const ctx = document.getElementById("propertySalesByYearBuiltChart").getContext("2d");
-  ctx.canvas.height = 300;
+  ctx.canvas.height = "auto";
 
 
   const propertySalesByYearBuiltChart = new Chart(ctx, {
@@ -126,7 +118,7 @@ function filterDataSalesByYearBuilt(e) {
     arrFiltered.reverse();
   }
   let labels = arrFiltered.map((item) => item.yearBuilt);
-  let data = arrFiltered.map((item) => item.salePrice);
+  let data = arrFiltered.map((item) => item.total);
 
   chartSalesByYearBuilt.data.labels = labels;
   chartSalesByYearBuilt.data.datasets[0].data = data;
@@ -142,7 +134,7 @@ function sortDataSalesByYearBuilt(e) {
   const order = document.getElementById("year-built-order-by").value;
 
   for (var i = 0; i < arrLabels.length; i++) {
-    arrTemp.push({ yearBuilt: arrLabels[i], salePrice: arrData[i] });
+    arrTemp.push({ yearBuilt: arrLabels[i], total: arrData[i] });
   }
 
   if (sortBy === "yearBuilt") {
@@ -151,16 +143,16 @@ function sortDataSalesByYearBuilt(e) {
     } else if (order === "desc") {
       arrTemp.sort((a, b) => b.yearBuilt - a.yearBuilt);
     }
-  } else if (sortBy === "salePrice") {
+  } else if (sortBy === "total") {
     if (order === "asc") {
-      arrTemp.sort((a, b) => a.salePrice - b.salePrice);
+      arrTemp.sort((a, b) => a.total - b.total);
     } else if (order === "desc") {
-      arrTemp.sort((a, b) => b.salePrice - a.salePrice);
+      arrTemp.sort((a, b) => b.total - a.total);
     }
   }
 
   let labels = arrTemp.map((item) => item.yearBuilt);
-  let data = arrTemp.map((item) => item.salePrice);
+  let data = arrTemp.map((item) => item.total);
 
   chartSalesByYearBuilt.data.labels = labels;
   chartSalesByYearBuilt.data.datasets[0].data = data;
