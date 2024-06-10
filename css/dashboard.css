@@ -14,14 +14,14 @@ nav{
     top: 0;
     left: 0;
     height: 100%;
-    padding: 45px 11px 0px ;
+    padding: 43px 11px 0px ;
     background-color: #109BFF;
 }
 
 .navbar{
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 100px;
 }
 
 .acc-icon-container{
@@ -38,26 +38,29 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 45px;
+    gap: 40px;
     list-style-type: none;
 }
 
-.pie-chart-icon,
-.line-chart-icon{
+.pie-chart-icon{
     width: 40px;
     margin: 5px;
     transition: transform 0.3s ease;
 }
 
-.table-icon{
-    width: 36px;
+
+.line-totalprop-chart-icon,
+.line-totalvsavg-chart-icon,
+.bar-yrbuild-chart-icon{
+    width: 35px;
     margin: 5px;
     transition: transform 0.3s ease;
 }
 
 .pie-chart-icon:hover,
-.line-chart-icon:hover,
-.table-icon:hover{
+.line-totalprop-chart-icon:hover,
+.line-totalvsavg-chart-icon:hover,
+.bar-yrbuild-chart-icon:hover{
     transform: scale(1.2);
 }
 
@@ -307,7 +310,7 @@ input[type="number"]{
     .navbar {
         flex-direction: row;
         align-items: center;
-        gap: 160px;
+        gap: 110px;
     }
     
     .account-icon{
@@ -317,12 +320,18 @@ input[type="number"]{
 
     ul {
         flex-direction: row;
-        gap: 30px;
+        gap: 28px;
     }
     
-    .pie-chart-icon,
-    .line-chart-icon{
-        width: 26px;
+    .pie-chart-icon{
+        width: 25px;
+        margin: 0px;
+    }
+
+    .line-totalprop-chart-icon,
+    .line-totalvsavg-chart-icon,
+    .bar-yrbuild-chart-icon{
+        width: 23px;
         margin: 0px;
     }
 

@@ -47,18 +47,23 @@
                 
                 <ul>
                     <li>
-                        <a href="dashboard.html" class="nav-menu">
+                        <a href="#piechart" class="nav-menu">
                             <img src="assets/pie_chart_icon.png" alt="Pie Chart" class="pie-chart-icon"/>
                         </a>     
                     </li>
-                    <li>
-                        <a href="addData.html" class="nav-menu">
-                            <img src="assets/line_chart_icon.png" alt="Line Chart" class="line-chart-icon"/>
+                   <li>
+                        <a href="#linetotal" class="nav-menu">
+                            <img src="assets/line_totalprop_chart_icon.png" alt="Line Total Property Chart" class="line-totalprop-chart-icon"/>
                         </a>
                     </li>
                     <li>
-                        <a href="feedback.html" class="nav-menu">
-                            <img src="assets/table_icon.png" alt="Table" class="table-icon"/>
+                        <a href="#totalavg" class="nav-menu">
+                            <img src="assets/line_totalvsavg_chart_icon.png" alt="Line Total VS Average Chart" class="line-totalvsavg-chart-icon"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#barchart-total" class="nav-menu">
+                            <img src="assets/bar_yrbuild_chart.png" alt="Bar Sales By Year Build Chart" class="bar-yrbuild-chart-icon"/>
                         </a>
                     </li>
                 </ul> 
@@ -115,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="piechart1">
+                <div class="piechart1" id="piechart">
                     <div class="titles">Avg Sale Price Per Borough</div>
                     <div class="pieavg">
                         <canvas id="piechart-avg"></canvas>
@@ -131,7 +136,7 @@
                     <script src="js/totalPropPie.js"></script> 
                 </div>  
 
-                <div class="linetotal">
+                <div class="linetotal" id="linetotal">
                     <div class="titles">Total Property Sales in Each Borough</div>
                     <div class="total-prop-filter-area">
                         <label for="yearSelect">Select Year:</label>
@@ -146,7 +151,7 @@
                     <script src="js/total.js" type="text/javascript"></script>
                 </div>
 
-                <div class="totalavg">
+                <div class="totalavg" id="totalavg">
                     <div class="titles">Total Sales Vs Avg Sales Price Per Building Class Category</div>
                     <div class="total-avg-filter-area">
                         <form id="filterForm">
@@ -175,7 +180,7 @@
                     </div>
                 </div>
 
-                <div class="barchart-total">
+                <div class="barchart-total" id="barchart-total">
                         <div class="titles">Total Property Sales Based On Year Build</div>
                     <div class="total-property-yrbuild-filter-area">
                         <form onsubmit="filterDataSalesByYearBuilt(event)">
