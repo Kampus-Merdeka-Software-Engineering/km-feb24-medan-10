@@ -85,8 +85,8 @@ fetch('json/nycPropSales.json')
     const ctx = document.getElementById('salesVsAvgPriceChart').getContext('2d');
     ctx.canvas.height = 400;
 
-    salesVsAvgPriceChart = new Chart(ctx, {
-        type: 'line', // Ubah menjadi line chart
+     salesVsAvgPriceChart = new Chart(ctx, {
+        type: 'line',
         data: {
             labels: labels,
             datasets: [{
@@ -94,13 +94,15 @@ fetch('json/nycPropSales.json')
                 data: totalSalesData,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderWidth: 1
+                borderWidth: 1,
+                yAxisID: 'y1',
             }, {
                 label: 'Avg Sales Price',
                 data: avgPriceData,
                 borderColor: 'rgba(192, 75, 192, 1)',
                 backgroundColor: 'rgba(192, 75, 192, 0.2)',
-                borderWidth: 1
+                borderWidth: 1,
+                yAxisID: 'y2',
             }]
         },
         options: {
@@ -108,28 +110,35 @@ fetch('json/nycPropSales.json')
             maintainAspectRatio: false,
             scales: {
                 x: {
-                    ticks: { 
-                        callback: function(value){
-                            let newLabel = this.getLabelForValue(value)
-                                .substring(0,8) + '...';
+                    ticks: {
+                        callback: function(value) {
+                            let newLabel = this.getLabelForValue(value).substring(0, 8) + '...';
                             return newLabel;
                         }
                     }
                 },
-                y: {
+                y1: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Total Sales'
+                    },
+                    position: 'left',
+                },
+                y2: {
                     beginAtZero: true,
                     title: {
                         display: true,
                         text: 'Dollar ($)'
                     },
-                    ticks: { 
-                        callback: function(value){
+                    position: 'right',
+                    ticks: {
+                        callback: function(value) {
                             let newLabel = value.toLocaleString('en-US', {
                                 maximumFractionDigits: 2,
                                 notation: 'compact',
                                 compactDisplay: 'short'
-                              });
-                            
+                            });
                             return newLabel;
                         }
                     }
