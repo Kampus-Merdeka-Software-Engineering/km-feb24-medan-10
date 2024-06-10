@@ -103,11 +103,11 @@
                         <table id="data-tabel">
                             <thead>
                                 <tr>
-                                    <th>BOROUGH</th>
-                                    <th>NEIGHBORHOOD</th>
-                                    <th>YEAR_BUILT</th>
-                                    <th>BUILDING_CATEGORY</th>
-                                    <th>SALE_PRICE</th>
+                                    <th><p>BOROUGH</p></th>
+                                    <th><p>NEIGHBORHOOD</p></th>
+                                    <th><p>YEAR BUILT</p></th>
+                                    <th><p>BUILDING CATEGORY</p></th>
+                                    <th><p>SALE PRICE</p></th>
                                 </tr>
                             </thead>
                         </table>
@@ -150,16 +150,22 @@
                     <div class="titles">Total Sales Vs Avg Sales Price Per Building Class Category</div>
                     <div class="total-avg-filter-area">
                         <form id="filterForm">
-                            <label for="total-avg-sort-by">Sort By: </label>
-                            <select id="total-avg-sort-by" name="total-avg-sort-by">
-                                <option value="totalSales" selected>Total Sales</option>
-                                <option value="avgSales">Average Sales</option>
-                            </select>
-                            <label for="total-avg-order-by">Order By: </label>
-                            <select id="total-avg-order-by" name="total-avg-order-by">
-                                <option value="asc" selected>Ascending</option>
-                                <option value="desc">Descending</option>
-                            </select>
+                            <div>
+                                <label for="total-avg-sort-by">Sort By: </label>
+                                <select id="total-avg-sort-by" name="total-avg-sort-by">
+                                    <option value="totalSales" selected>Total Sales</option>
+                                    <option value="avgSales">Average Sales</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="total-avg-order-by">Order By: </label>
+                                <select id="total-avg-order-by" name="total-avg-order-by">
+                                    <option value="asc" selected>Ascending</option>
+                                    <option value="desc">Descending</option>
+                                </select>
+                            </div>
+                            
                             <button type="submit">Apply</button>
                         </form>
                     </div>
@@ -169,11 +175,12 @@
                     </div>
                 </div>
 
-                <div class="totalprop">
+                <div class="barchart-total">
                         <div class="titles">Total Property Sales Based On Year Build</div>
                     <div class="total-property-yrbuild-filter-area">
                         <form onsubmit="filterDataSalesByYearBuilt(event)">
-                            <label for="year-built-from">From Year Built: </label>
+                            <div>
+                                <label for="year-built-from">From Year Built: </label>
                                 <input
                                     type="number"
                                     id="year-built-from"
@@ -181,7 +188,10 @@
                                     min="1111"
                                     max="2017"
                                 />
-                            <label for="year-built-to">To Year Built: </label>
+                            </div>
+
+                            <div>
+                                <label for="year-built-to">To Year Built: </label>
                                 <input
                                     type="number"
                                     id="year-built-to"
@@ -189,22 +199,27 @@
                                     min="1111"
                                     max="2017"
                                 />
+                            </div>                            
                             <input type="submit" value="Apply" />
                         </form>
                     </div>
                     <div class="total-property-yrbuild-filter-area">
                         <form onsubmit="sortDataSalesByYearBuilt(event)">
-                            <label for="year-built-sort-by">Sort By: </label>
-                            <select id="year-built-sort-by" name="year-built-sort-by">
-                                <option value="yearBuilt" selected>Year Built</option>
-                                <option value="total">Total Sales</option>
-                            </select>
-                        
-                            <label for="year-built-order-by">Order By: </label>
-                            <select id="year-built-order-by" name="year-built-order-by">
-                                <option value="asc" selected>Ascending</option>
-                                <option value="desc">Descending</option>
-                            </select>
+                            <div>
+                                <label for="year-built-sort-by">Sort By: </label>
+                                <select id="year-built-sort-by" name="year-built-sort-by">
+                                    <option value="yearBuilt" selected>Year Built</option>
+                                    <option value="total">Total Sales</option>
+                                </select> 
+                            </div>
+
+                            <div>
+                                <label for="year-built-order-by">Order By: </label>
+                                <select id="year-built-order-by" name="year-built-order-by">
+                                    <option value="asc" selected>Ascending</option>
+                                    <option value="desc">Descending</option>
+                                </select>
+                            </div>
                             <input type="submit" value="Apply" />
                         </form>
                     </div>

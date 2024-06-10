@@ -14,14 +14,14 @@ nav{
     top: 0;
     left: 0;
     height: 100%;
-    padding: 48px 13px 10px ;
+    padding: 45px 11px 0px ;
     background-color: #109BFF;
 }
 
 .navbar{
     display: flex;
     flex-direction: column;
-    gap: 90px;
+    gap: 120px;
 }
 
 .acc-icon-container{
@@ -30,7 +30,7 @@ nav{
 }
 
 .account-icon{
-    width: 60px;
+    width: 55px;
 }
 
 ul {
@@ -38,35 +38,27 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 45px;
     list-style-type: none;
 }
 
-.dashboard-icon,
-.addData-icon,
-.feedback-icon{
+.pie-chart-icon,
+.line-chart-icon{
     width: 40px;
+    margin: 5px;
     transition: transform 0.3s ease;
 }
 
-.logOut-menu{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-top: 100px;
-    font-weight: 400;
-    font-size: 13px;
-    color: white;
+.table-icon{
+    width: 36px;
+    margin: 5px;
+    transition: transform 0.3s ease;
 }
 
-.logOut-icon{
-    width: 20px;
-}
-
-.dashboard-icon:hover,
-.addData-icon:hover,
-.feedback-icon:hover{
-    transform: scale(1.3);
+.pie-chart-icon:hover,
+.line-chart-icon:hover,
+.table-icon:hover{
+    transform: scale(1.2);
 }
 
 /* --------- Header and Filter button --------- */
@@ -114,7 +106,7 @@ main {
 
 .linetotal,
 .totalavg, 
-.totalprop{
+.barchart-total{
     grid-column: span 4;
     padding-top: 20px;
 }
@@ -134,21 +126,6 @@ main {
     border: none;
     border-radius: 5px;
 }
-
-/* .dropbtn-borough option{
-    position: absolute;
-    font-weight: 400;
-    font-size: 11px;
-    background-color: #f1f1f1;
-    width: 130px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border: none;
-} */
-
-/* .dropbtn-borough option:hover{
-    background-color: #ddd;
-} */
 
 .score-card1,
 .score-card2 {
@@ -179,7 +156,6 @@ main {
 
 .tabelrec {
     padding: 10px;
-    background-color: white;
     overflow: auto;
 }
 
@@ -199,11 +175,22 @@ table th {
     color: #FFE713;
     font-size: 15px;
     overflow: hidden;
+    word-wrap:break-word;    
 }
 
 table td{
     overflow: hidden;
     word-wrap:break-word;
+}
+
+table.dataTable > tbody > tr.child ul.dtr-details > li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details > li.dtr-title{
+    font-weight: 300;
 }
 
 .piechart1, .piechart2 {
@@ -223,7 +210,7 @@ table td{
     max-width: 255px;
 }
 
-.linechartotal, .totalavgchart, .linechartprop {
+.linechartotal, .totalavgchart, .barchart-totalprop-yrbld {
     margin: 20px 0px;
     padding: 20px;
     background-color: #c0bebe2c;
@@ -299,10 +286,6 @@ input[type="number"]{
     font-size: 13px;
 }
 
-/* #propertySalesChart, #salesVsAvgPriceChart, #propertySalesByYearBuiltChart{
-    max-width: 100%;
-} */
-
 /* -------------- Footer --------------- */
 .footertitle {
     padding: 30px 45px 10px 150px;
@@ -323,23 +306,29 @@ input[type="number"]{
     
     .navbar {
         flex-direction: row;
-        gap: 188px;
+        align-items: center;
+        gap: 160px;
     }
     
     .account-icon{
-        width: 30px;
+        width: 38px;
+        height: 38px;
     }
 
     ul {
         flex-direction: row;
-        gap: 28px;
+        gap: 30px;
     }
     
-    .dashboard-icon,
-    .addData-icon,
-    .feedback-icon{
-        padding-top: 5px;
-        width: 20px;
+    .pie-chart-icon,
+    .line-chart-icon{
+        width: 26px;
+        margin: 0px;
+    }
+
+    .table-icon{
+        width: 23px;
+        margin: 0px;
     }
 
     /* --------- Header and Filter button --------- */
@@ -406,9 +395,7 @@ input[type="number"]{
 
     .tabelrec {
         padding: 5px;
-        /* max-height: 300px; */
     }
-    
 
     table th {
         font-size: 13px;
@@ -418,55 +405,58 @@ input[type="number"]{
         font-size: 12px;
     }
 
-    /* #data-tabel_wrapper > .dt-layout-row{
+    #data-tabel_wrapper > .dt-layout-row{
         display: flex;
         justify-content: center;
         align-items: end;
+        gap: 15px
     }
 
     #data-tabel_wrapper label[for="dt-length-0"]{
         display: none;
-    } */
+    }
 
     .piechart1, .piechart2{
         grid-column: span 4;
         gap: 10px;
     }
 
-    .linetotal, .totalavg, .totalprop {
-        padding-right: 20px;
+    .linetotal, .totalavg, .barchart-total {
         grid-column: span 4;
+        padding: 0px;
+        margin: 0px 5px;
     }
 
-    .total-prop-filter-area,
-    .total-avg-filter-area{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px auto;
+    .total-prop-filter-area{
         font-size: 12px;
         font-weight: 400;
+        gap: 5px;
+    }
+
+    #filterForm{
+        font-size: 12px;
+        font-weight: 400;
+        gap: 20px
+    }
+
+    #filterForm div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 10px;
     }
     
-    #filterForm{
-        display: flex;
-        align-items: center;
-        gap: 10px
-    }
-    
     .total-property-yrbuild-filter-area {
-        display: flex;
-        justify-content: center;
-        margin: 20px auto;
         font-size: 12px;
         font-weight: 400;
+        gap: 20px
     }
-    
-    .total-property-yrbuild-filter-area form{
+
+    .total-property-yrbuild-filter-area div{
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 10px
+        gap: 10px;
     }
     
     #yearSelect, 
@@ -474,29 +464,18 @@ input[type="number"]{
     #total-avg-order-by,
     #year-built-sort-by,
     #year-built-order-by {
-        padding: 6px 18px;
-        font-weight: 500;
-        font-size: 13px;
-        color: #3f3f3f;
-        background-color: #ebebeb;
-        border: none;
-        border-radius: 5px;
+        padding: 5px 5px;
+        font-size: 10px;
     }
     
     input[type="submit"],
     button[type="submit"]{
-        padding: 2px 6px;
-        font-weight: 500;
-        font-size: 13px;
-        color: #3f3f3f;
-        background-color: #fff;
-        border: solid 1px black;
-        border-radius: 3px;
+        padding: 1px 4px;
+        font-size: 10px;
     }
     
     input[type="number"]{
         padding: 3px 5px;
-        font-weight: 300;
         font-size: 13px;
     }    
 
@@ -634,6 +613,7 @@ input[type="number"]{
     
 
     }
+
     .piechart1,
     .piechart2 {
         display: flex;
@@ -642,6 +622,7 @@ input[type="number"]{
         padding-top: 15px;
         grid-column: span 1;
     }
+
     #piechart-avg,
     #pie-total-property-sales {
         max-height: 300px;
@@ -650,7 +631,7 @@ input[type="number"]{
 
     .linechartotal,
     .totalavgchart,
-    .linechartprop {
+    .barchart-totalprop-yrbld {
         padding: 10px;
     }
 
