@@ -361,7 +361,7 @@ input[type="number"]{
 
     .grid-container {
         display: grid;
-        row-gap: 30px;
+        row-gap: 60px;
         column-gap: 0;
         justify-content: center;
     }
@@ -382,12 +382,13 @@ input[type="number"]{
     .score-card1,
     .score-card2 {
         grid-column: span 2;
-        padding: 20px 0px 20px 0px;
+        padding: 20px 0px 0px 0px;
     } 
 
     .scoretotal, .scoreprop {
         max-width: 150px;
-        border-radius: 10px;
+        max-height: 38px;
+        border-radius: 9px;
     }
 
     #total-sale-price, #total-property{
@@ -489,7 +490,20 @@ input[type="number"]{
     input[type="number"]{
         padding: 3px 5px;
         font-size: 13px;
-    }    
+    }   
+    
+    .linechartotal,
+    .totalavgchart,
+    .barchart-totalprop-yrbld {
+        margin: 0px 10px 0px 10px;
+        padding: 5px;
+    }
+
+    #propertySalesChart,
+    #salesVsAvgPriceChart,
+    #propertySalesByYearBuiltChart {
+        max-width: 100%;
+    }
 
     /* Footer */
     .footertitle {
