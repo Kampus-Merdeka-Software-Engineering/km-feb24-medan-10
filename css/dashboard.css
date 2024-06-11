@@ -598,8 +598,8 @@ input[type="number"]{
     }
 
     .dropbtn-borough{
-        padding: 4px 11px;
-        font-size: 11px;
+        padding: 8px 18px;
+        font-size: 17px;
     }
     
     .score-card1,
@@ -616,7 +616,6 @@ input[type="number"]{
 
     #total-sale-price, #total-property{
         font-size: 18px;
-        max-width: 500px;
     }
 
     .tabel {
